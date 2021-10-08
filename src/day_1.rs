@@ -1,4 +1,3 @@
-
 // You probably know the "like" system from Facebook and other pages. People can "like" blog posts, pictures or other items. We want to create the text that should be displayed next to such an item.
 
 // Implement the function which takes an array containing the names of people that like an item. It must return the display text as shown in the examples:
@@ -14,16 +13,21 @@
 
 pub fn likes(names: &[&str]) -> String {
     let num_names = names.len();
-    if num_names == 0  {
+    if num_names == 0 {
         String::from("no one likes this")
-    }else if num_names == 1 {
+    } else if num_names == 1 {
         format!("{} likes this", names[0])
-    }else if num_names == 2 {
+    } else if num_names == 2 {
         format!("{} and {} like this", names[0], names[1])
-    }else if num_names == 3 {
+    } else if num_names == 3 {
         format!("{}, {} and {} like this", names[0], names[1], names[2])
-    }else{
-        format!("{}, {} and {} others like this", names[0], names[1], num_names-2)
+    } else {
+        format!(
+            "{}, {} and {} others like this",
+            names[0],
+            names[1],
+            num_names - 2
+        )
     }
 }
 
