@@ -10,7 +10,7 @@
 // ["Alex", "Jacob", "Mark", "Max"]  -->  "Alex, Jacob and 2 others like this"
 // ```
 // Note: For 4 or more names, the number in "and 2 others" simply increases.
-
+#[allow(dead_code)]
 pub fn likes(names: &[&str]) -> String {
     let num_names = names.len();
     if num_names == 0 {
