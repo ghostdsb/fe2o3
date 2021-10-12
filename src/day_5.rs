@@ -14,9 +14,9 @@ use std::collections::HashMap;
 
 pub fn check(candidate: &str) -> bool {
     candidate
+        .to_lowercase()
         .chars()
         .filter(|x| x.is_alphanumeric())
-        .map(|x| x.to_lowercase().to_string())
         .fold((HashMap::new(), true), |(mut map, iso), x| {
             match map.insert(x, 1) {
                 Some(_val) => (map, iso & false),
