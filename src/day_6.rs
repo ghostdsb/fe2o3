@@ -8,7 +8,7 @@ Ex.
 
 #[allow(dead_code)]
 fn multiples(m: i32, n: f64) -> Vec<f64> {
-    (1..m + 1).map(|x| (x as f64) * n).collect::<Vec<_>>()
+    (1..=m).map(|x| x as f64 * n).collect()
 }
 
 #[cfg(test)]
