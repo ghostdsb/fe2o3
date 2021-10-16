@@ -1,50 +1,72 @@
+/*
+Instructions
+
+Add the mine counts to a completed Minesweeper board.
+Minesweeper is a popular game where the user has to find the mines using numeric hints that indicate how many mines are directly adjacent (horizontally, vertically, diagonally) to a square.
+In this exercise you have to create some code that counts the number of mines adjacent to a given empty square and replaces that square with the count.
+The board is a rectangle composed of blank space (' ') characters. A mine is represented by an asterisk ('*') character.
+If a given space has no adjacent mines at all, leave that square blank.
+
+Examples
+For example you may receive a 5 x 4 board like this (empty spaces are represented here with the '·' character for display on screen):
+
+·*·*·
+··*··
+··*··
+·····
+And your code will transform it into this:
+
+1*3*1
+13*31
+·2*2·
+·111·
+
+*/
+
 pub fn annotate(minefield: &[&str]) -> Vec<String> {
-    let mut mined: Vec<String> = Vec::with_capacity(minefield.len());
-
+    let mut mined: Vec<String> = Vec::new();
     let minefield_height = minefield.len();
-
     if minefield_height == 0 {
         return vec![];
     }
-
     let minefield_width = minefield[0].len();
-
     if minefield_width == 0 {
         return vec![String::from("")];
     }
-
     for i in 0..minefield_height {
         for j in 0..minefield_width {
-            if get_val(minefield[i].chars().nth(j)) == 1 {
+            let r = i as i32;
+            let c = j as i32;
+            if get_position_val(r, c, minefield_height, minefield_width, minefield) == 1 {
                 mined.push(String::from("*"));
             } else {
-                let mines = if j > 0 {
-                    get_val(minefield[i].chars().nth(j - 1))
-                        + if i < minefield_height - 1 {
-                            get_val(minefield[i + 1].chars().nth(j - 1))
-                        } else {
-                            0
-                        }
-                } else {
-                    0
-                } + get_val(minefield[i].chars().nth(j + 1))
-                    + if i < minefield_height - 1 {
-                        get_val(minefield[i + 1].chars().nth(j))
-                            + get_val(minefield[i + 1].chars().nth(j + 1))
-                    } else {
-                        0
-                    }
-                    + if i > 0 && j > 0 {
-                        get_val(minefield[i - 1].chars().nth(j - 1))
-                    } else {
-                        0
-                    }
-                    + if i > 0 {
-                        get_val(minefield[i - 1].chars().nth(j))
-                            + get_val(minefield[i - 1].chars().nth(j + 1))
-                    } else {
-                        0
-                    };
+                let mines =
+                    get_position_val(r - 1, c - 1, minefield_height, minefield_width, minefield)
+                        + get_position_val(r - 1, c, minefield_height, minefield_width, minefield)
+                        + get_position_val(
+                            r - 1,
+                            c + 1,
+                            minefield_height,
+                            minefield_width,
+                            minefield,
+                        )
+                        + get_position_val(r, c - 1, minefield_height, minefield_width, minefield)
+                        + get_position_val(r, c + 1, minefield_height, minefield_width, minefield)
+                        + get_position_val(
+                            r + 1,
+                            c - 1,
+                            minefield_height,
+                            minefield_width,
+                            minefield,
+                        )
+                        + get_position_val(r + 1, c, minefield_height, minefield_width, minefield)
+                        + get_position_val(
+                            r + 1,
+                            c + 1,
+                            minefield_height,
+                            minefield_width,
+                            minefield,
+                        );
                 if mines == 0 {
                     mined.push(String::from(" "));
                 } else {
@@ -60,11 +82,15 @@ pub fn annotate(minefield: &[&str]) -> Vec<String> {
         .collect()
 }
 
-fn get_val(val: Option<char>) -> u32 {
-    match val {
-        Some('*') => 1,
-        Some(_) => 0,
-        None => 0,
+fn get_position_val(i: i32, j: i32, w: usize, h: usize, field: &[&str]) -> u32 {
+    if i < 0 || j < 0 || i as usize >= w || j as usize >= h {
+        0
+    } else {
+        match field[i as usize].chars().nth(j as usize) {
+            Some('*') => 1,
+            Some(_) => 0,
+            None => 0,
+        }
     }
 }
 
