@@ -1,4 +1,5 @@
 mod day_1;
+mod day_10;
 mod day_2;
 mod day_3;
 mod day_4;
@@ -25,6 +26,9 @@ fn main() {
     let m = day_9::mean("Rome", &da_ta());
     let v = day_9::variance("Rome", &da_ta());
     println!("day9: {}, {}", m, v);
+
+    let x = day_10::frequency(&["aabbcccd", "eefg"], 4);
+    println!("day10: {:?}", x);
 }
 
 fn da_ta() -> String {
