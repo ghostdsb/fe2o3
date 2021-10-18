@@ -1,5 +1,6 @@
 mod day_1;
 mod day_10;
+mod day_11;
 mod day_2;
 mod day_3;
 mod day_4;
@@ -29,6 +30,9 @@ fn main() {
 
     let x = day_10::frequency(&["aabbcccd", "eefg"], 4);
     println!("day10: {:?}", x);
+
+    let hm = hashmap!(1 => "a",);
+    println!("{:?}", hm);
 }
 
 fn da_ta() -> String {
