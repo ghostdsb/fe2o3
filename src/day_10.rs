@@ -29,9 +29,9 @@ pub fn frequency(input: &[&str], worker_count: usize) -> HashMap<char, usize> {
         chunk_v[index as usize].push(ch);
     }
 
-    for i in 0..worker_count {
+    for chunk in chunk_v.iter().take(worker_count) {
         let tx = tx.clone();
-        let cv = chunk_v[i].clone();
+        let cv = chunk.clone();
         thread::spawn(move || {
             tx.send(cv).unwrap();
         });
@@ -42,7 +42,7 @@ pub fn frequency(input: &[&str], worker_count: usize) -> HashMap<char, usize> {
     for characters in rx {
         println!("received: {:?}", characters);
         for ch in characters {
-            let counter = collector.entry(ch).or_insert(0 as usize);
+            let counter = collector.entry(ch).or_insert(0_usize);
             *counter += 1;
         }
     }

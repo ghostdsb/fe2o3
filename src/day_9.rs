@@ -43,11 +43,11 @@ pub fn variance(town: &str, strng: &str) -> f64 {
 fn get_temperature_record(town: &str, strng: &str) -> Option<(Vec<f64>, i32)> {
     let weather_dir =
         strng
-            .split("\n")
+            .split('\n')
             .collect::<Vec<_>>()
             .iter()
             .fold(HashMap::new(), |mut map, c| {
-                let w = c.split(":").collect::<Vec<_>>();
+                let w = c.split(':').collect::<Vec<_>>();
                 if w.len() == 2 {
                     map.insert(w[0], w[1]);
                 }
@@ -55,10 +55,10 @@ fn get_temperature_record(town: &str, strng: &str) -> Option<(Vec<f64>, i32)> {
             });
 
     match weather_dir.get(town) {
-        Some(data) => Some(data.split(",").collect::<Vec<_>>().iter().fold(
+        Some(data) => Some(data.split(',').collect::<Vec<_>>().iter().fold(
             (Vec::new(), 0),
             |(mut temp, mut count), data| {
-                let d = data.split(" ").collect::<Vec<_>>();
+                let d = data.split_whitespace().collect::<Vec<_>>();
                 temp.push(d[1].parse::<f64>().unwrap());
                 count += 1;
                 (temp, count)
