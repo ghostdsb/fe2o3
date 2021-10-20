@@ -14,3 +14,4 @@ One rust exercise daily.
 10. [concurrency](./src/day_10.rs)
 11. [macros](./src/day_11.rs)
 12. [strong number](./src/day_12.rs) 
+12. [all your base](./src/day_13.rs) 

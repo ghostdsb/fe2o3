@@ -2,6 +2,7 @@ mod day_1;
 mod day_10;
 mod day_11;
 mod day_12;
+mod day_13;
 mod day_2;
 mod day_3;
 mod day_4;
@@ -37,6 +38,12 @@ fn main() {
 
     let str = day_12::strong(145);
     println!("145 is {}", str);
+
+    let num = day_13::allyourbase::convert(&[1, 2, 0], 2, 10);
+    match num {
+        Ok(val) => println!("bin 10: {:?}", val),
+        Err(error) => println!("err {:?}", error),
+    }
 }
 
 fn da_ta() -> String {
