@@ -3,6 +3,7 @@ mod day_10;
 mod day_11;
 mod day_12;
 mod day_13;
+mod day_14;
 mod day_2;
 mod day_3;
 mod day_4;
@@ -14,36 +15,59 @@ mod day_9;
 
 fn main() {
     println!("Daily Rust Exercise");
+    println!("=========");
+    println!("=========");
     let d = day_4::is_valid("055 444 285");
     println!("day4: {}", d);
 
+    println!("=========");
     let d = day_5::check("055 444 285");
     println!("day5: {}", d);
 
+    println!("=========");
     let d = day_7::movie(18, 40, 0.47);
     println!("day7: {}", d);
 
+    println!("=========");
     let d = day_8::annotate(&["  *  ", "  *  ", "*****", "  *  ", "  *  "]);
     println!("day8: {:?}", d);
 
+    println!("=========");
     let m = day_9::mean("Rome", &da_ta());
     let v = day_9::variance("Rome", &da_ta());
     println!("day9: {}, {}", m, v);
 
+    println!("=========");
     let x = day_10::frequency(&["aabbcccd", "eefg"], 4);
     println!("day10: {:?}", x);
 
+    println!("=========");
     let hm = hashmap!(1 => "a",);
-    println!("{:?}", hm);
+    println!("day11: {:?}", hm);
 
+    println!("=========");
     let str = day_12::strong(145);
-    println!("145 is {}", str);
+    println!("day12: 145 is {}", str);
 
+    println!("=========");
     let num = day_13::allyourbase::convert(&[1, 2, 0], 2, 10);
     match num {
-        Ok(val) => println!("bin 10: {:?}", val),
-        Err(error) => println!("err {:?}", error),
+        Ok(val) => println!("day13: bin 10: {:?}", val),
+        Err(error) => println!("day13: err {:?}", error),
     }
+
+    println!("=========");
+    let allergy_score = 5;
+    let allergion = day_14::allergies::Allergies::new(allergy_score);
+    println!("day14: allergy score to {}", allergy_score);
+    for (i, item) in day_14::allergies::ALLERGENS.iter().enumerate() {
+        let al_score = 2i32.pow(i as u32);
+        match allergion.is_allergic_to(item) {
+            true => println!("allergic to {:?}({})", item, al_score),
+            false => println!("not allergic to {:?}({})", item, al_score),
+        }
+    }
+    println!("{:?}", allergion.allergies());
 }
 
 fn da_ta() -> String {
