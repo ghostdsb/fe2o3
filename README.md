@@ -16,3 +16,4 @@ One rust exercise daily.
 12. [strong number](./src/day_12.rs) 
 13. [all your base](./src/day_13.rs) 
 14. [allergies](./src/day_14.rs) 
+15. [jumping numbers](./src/day_15.rs) 
