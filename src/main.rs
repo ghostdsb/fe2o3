@@ -5,6 +5,7 @@ mod day_12;
 mod day_13;
 mod day_14;
 mod day_15;
+mod day_16;
 mod day_2;
 mod day_3;
 mod day_4;
@@ -18,20 +19,20 @@ fn main() {
     println!("Daily Rust Exercise");
     println!("=========");
     println!("=========");
-    let d = day_4::is_valid("055 444 285");
-    println!("day4: {}", d);
+    let input = day_4::is_valid("055 444 285");
+    println!("day4: {}", input);
 
     println!("=========");
-    let d = day_5::check("055 444 285");
-    println!("day5: {}", d);
+    let input = day_5::check("055 444 285");
+    println!("day5: {}", input);
 
     println!("=========");
-    let d = day_7::movie(18, 40, 0.47);
-    println!("day7: {}", d);
+    let input = day_7::movie(18, 40, 0.47);
+    println!("day7: {}", input);
 
     println!("=========");
-    let d = day_8::annotate(&["  *  ", "  *  ", "*****", "  *  ", "  *  "]);
-    println!("day8: {:?}", d);
+    let input = day_8::annotate(&["  *  ", "  *  ", "*****", "  *  ", "  *  "]);
+    println!("day8: {:?}", input);
 
     println!("=========");
     let m = day_9::mean("Rome", &da_ta());
@@ -73,6 +74,19 @@ fn main() {
     println!("=========");
     let ans = day_15::jumping_number(12345);
     println!("{}", ans);
+
+    println!("=========");
+    let input = [
+        day_16::Direction::North,
+        day_16::Direction::South,
+        day_16::Direction::South,
+        day_16::Direction::East,
+        day_16::Direction::West,
+        day_16::Direction::North,
+        day_16::Direction::West,
+    ];
+    let dir = day_16::dir_reduc(&input);
+    println!("day16: dirs {:?}", dir);
 }
 
 fn da_ta() -> String {
