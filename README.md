@@ -18,3 +18,4 @@ One rust exercise daily.
 14. [allergies](./src/day_14.rs) 
 15. [jumping numbers](./src/day_15.rs) 
 16. [directions reduction](./src/day_16.rs) 
+17. [bowling](./src/day_17.rs) 

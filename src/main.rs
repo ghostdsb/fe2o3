@@ -6,6 +6,7 @@ mod day_13;
 mod day_14;
 mod day_15;
 mod day_16;
+mod day_17;
 mod day_2;
 mod day_3;
 mod day_4;
@@ -87,6 +88,22 @@ fn main() {
     ];
     let dir = day_16::dir_reduc(&input);
     println!("day16: dirs {:?}", dir);
+
+    println!("=========");
+
+    let mut game = day_17::BowlingGame::new();
+
+    let _ = game.roll(10);
+    let _ = game.roll(10);
+    let _ = game.roll(10);
+    let _ = game.roll(5);
+    let _ = game.roll(3);
+
+    for _ in 0..12 {
+        let _ = game.roll(0);
+    }
+    println!("{:?}", game);
+    println!("{:?}", game.score());
 }
 
 fn da_ta() -> String {
