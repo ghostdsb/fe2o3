@@ -8,6 +8,7 @@ mod day_15;
 mod day_16;
 mod day_17;
 mod day_18;
+mod day_19;
 mod day_2;
 mod day_3;
 mod day_4;
@@ -105,6 +106,13 @@ fn main() {
     }
     println!("{:?}", game);
     println!("{:?}", game.score());
+
+    println!("=========");
+    let hd1 = day_19::hamming::hamming_distance("ATGC", "ATGC");
+    let hd2 = day_19::hamming::hamming_distance("ATGC", "ATGG");
+    let hd3 = day_19::hamming::hamming_distance("ATGC", "ATGGG");
+
+    println!("day19: {:?}, {:?}, {:?}", hd1, hd2, hd3);
 }
 
 fn da_ta() -> String {

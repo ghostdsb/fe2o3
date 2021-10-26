@@ -19,4 +19,5 @@ One rust exercise daily.
 15. [jumping numbers](./src/day_15.rs) 
 16. [directions reduction](./src/day_16.rs) 
 17. [bowling](./src/day_17.rs) 
-18. [bowling](./src/day_18.rs) 
+18. [binary_seach](./src/day_18.rs) 
+19. [hammings distance](./src/day_19.rs) 
