@@ -22,7 +22,6 @@ mod tests {
     use super::*;
 
     #[test]
-    #[ignore]
     fn basic() {
         assert_eq!(jumping_number(1), true);
         assert_eq!(jumping_number(7), true);

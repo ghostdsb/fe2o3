@@ -11,6 +11,7 @@ mod day_18;
 mod day_19;
 mod day_2;
 mod day_20;
+mod day_21;
 mod day_3;
 mod day_4;
 mod day_5;
@@ -114,6 +115,13 @@ fn main() {
     let hd3 = day_19::hamming::hamming_distance("ATGC", "ATGGG");
 
     println!("day19: {:?}, {:?}, {:?}", hd1, hd2, hd3);
+
+    println!("=========");
+    // let isbn = "3-598-21508-8";
+    // let isbn = "3-598-21507-X";
+    let isbn = "3-598-2X507-9";
+    let is_isbn = day_21::is_valid_isbn(isbn);
+    println!("day21: {:?}, {:?}", isbn, is_isbn);
 }
 
 fn da_ta() -> String {
