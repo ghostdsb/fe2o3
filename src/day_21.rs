@@ -8,9 +8,9 @@ pub fn is_valid_isbn(isbn: &str) -> bool {
                     count += 1;
                     10 * (10 - i as u32)
                 }
-                (_, Some(_), _) => {
+                (_, Some(val), _) => {
                     count += 1;
-                    c.to_digit(10).unwrap() * (10 - i as u32)
+                    val * (10 - i as u32)
                 }
                 _ => 0,
             };

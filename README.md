@@ -23,3 +23,4 @@ One rust exercise daily.
 19. [hammings distance](./src/day_19.rs) 
 20. [grade school](./src/day_20.rs) 
 21. [ISBN verifier](./src/day_21.rs) 
+22. [palindrome-products](./src/day_22.rs) 

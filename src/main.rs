@@ -12,6 +12,7 @@ mod day_19;
 mod day_2;
 mod day_20;
 mod day_21;
+mod day_22;
 mod day_3;
 mod day_4;
 mod day_5;
@@ -115,6 +116,13 @@ fn main() {
     let hd3 = day_19::hamming::hamming_distance("ATGC", "ATGGG");
 
     println!("day19: {:?}, {:?}, {:?}", hd1, hd2, hd3);
+    println!("=========");
+
+    let mut s = day_20::grade_school::School::new();
+    s.add(3, "Chelsea");
+    s.add(7, "Logan");
+    println!("day20: {:?}", s.grades());
+    println!("day20: {:?}, {:?}", s.grade(3), s.grade(7));
 
     println!("=========");
     // let isbn = "3-598-21508-8";
