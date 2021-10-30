@@ -24,3 +24,4 @@ One rust exercise daily.
 20. [grade school](./src/day_20.rs) 
 21. [ISBN verifier](./src/day_21.rs) 
 22. [palindrome-products](./src/day_22.rs) 
+23. [perfect numbers](./src/day_23.rs) 
