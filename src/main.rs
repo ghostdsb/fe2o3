@@ -16,6 +16,7 @@ mod day_22;
 mod day_23;
 mod day_24;
 mod day_25;
+mod day_26;
 mod day_3;
 mod day_4;
 mod day_5;
@@ -133,6 +134,15 @@ fn main() {
     let isbn = "3-598-2X507-9";
     let is_isbn = day_21::is_valid_isbn(isbn);
     println!("day21: {:?}, {:?}", isbn, is_isbn);
+
+    println!("=========");
+    let val = "ABBBCCCC  AA";
+    let rle_val = day_26::rle::encode(val);
+    println!("day26: {:?}, {:?}", val, rle_val);
+
+    let val = "D2A8B";
+    let rle_val = day_26::rle::decode(val);
+    println!("day26: {:?}, {:?}", val, rle_val);
 }
 
 fn da_ta() -> String {

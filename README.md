@@ -27,3 +27,4 @@ One rust exercise daily.
 23. [perfect numbers](./src/day_23.rs) 
 24. [pangrams](./src/day_24.rs) 
 25. [collatz conjecture](./src/day_25.rs) 
+26. [run length encoding](./src/day_26.rs) 
