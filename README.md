@@ -28,3 +28,4 @@ One rust exercise daily.
 24. [pangrams](./src/day_24.rs) 
 25. [collatz conjecture](./src/day_25.rs) 
 26. [run length encoding](./src/day_26.rs) 
+27. [Diffie Hellman](./src/day_27.rs) 

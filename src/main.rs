@@ -17,6 +17,7 @@ mod day_23;
 mod day_24;
 mod day_25;
 mod day_26;
+mod day_27;
 mod day_3;
 mod day_4;
 mod day_5;
@@ -140,9 +141,23 @@ fn main() {
     let rle_val = day_26::rle::encode(val);
     println!("day26: {:?}, {:?}", val, rle_val);
 
+    println!("=========");
     let val = "D2A8B";
     let rle_val = day_26::rle::decode(val);
     println!("day26: {:?}, {:?}", val, rle_val);
+
+    println!("=========");
+    let primes: Vec<u64> = vec![
+        5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 773, 967, 3461, 6131,
+    ];
+    let private_keys: Vec<u64> = primes
+        .iter()
+        .map(|x| day_27::diffie_hellman::private_key(*x))
+        .collect();
+
+    for i in 0..primes.len() {
+        println!("day27: pk: {}, p: {}", private_keys[i], primes[i]);
+    }
 }
 
 fn da_ta() -> String {
