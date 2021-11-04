@@ -18,6 +18,7 @@ mod day_24;
 mod day_25;
 mod day_26;
 mod day_27;
+mod day_28;
 mod day_3;
 mod day_4;
 mod day_5;
@@ -158,6 +159,14 @@ fn main() {
     for i in 0..primes.len() {
         println!("day27: pk: {}, p: {}", private_keys[i], primes[i]);
     }
+
+    println!("=========");
+    println!("day_28: {:?}", day_28::sieve::primes_up_to(0));
+    println!("day_28: {:?}", day_28::sieve::primes_up_to(2));
+    println!("day_28: {:?}", day_28::sieve::primes_up_to(3));
+    println!("day_28: {:?}", day_28::sieve::primes_up_to(5));
+    println!("day_28: {:?}", day_28::sieve::primes_up_to(11));
+    println!("day_28: {:?}", day_28::sieve::primes_up_to(13));
 }
 
 fn da_ta() -> String {
