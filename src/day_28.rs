@@ -16,8 +16,8 @@ pub mod sieve {
         sieve
             .iter()
             .enumerate()
-            .filter(|(i, c)| **c && *i >= 2 as usize)
-            .map(|(i, _c)| i as u64)
+            .filter(|(idx, c)| **c && *idx >= 2 as usize)
+            .map(|(idx, _c)| idx as u64)
             .collect()
     }
 }
