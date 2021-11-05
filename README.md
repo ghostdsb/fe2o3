@@ -31,3 +31,4 @@ One rust exercise daily.
 27. [Diffie Hellman](./src/day_27.rs) 
 28. [Sieve of Eratosthenes](./src/day_28.rs) 
 29. [triangles](./src/day_29.rs) 
+30. [pythagorean triplets](./src/day_30.rs) 

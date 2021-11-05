@@ -21,6 +21,7 @@ mod day_27;
 mod day_28;
 mod day_29;
 mod day_3;
+mod day_30;
 mod day_4;
 mod day_5;
 mod day_6;
@@ -29,151 +30,151 @@ mod day_8;
 mod day_9;
 
 fn main() {
-    println!("Daily Rust Exercise");
-    println!("=========");
-    println!("=========");
-    let input = day_4::is_valid("055 444 285");
-    println!("day4: {}", input);
+  println!("Daily Rust Exercise");
+  println!("=========");
+  println!("=========");
+  let input = day_4::is_valid("055 444 285");
+  println!("day4: {}", input);
 
-    println!("=========");
-    let input = day_5::check("055 444 285");
-    println!("day5: {}", input);
+  println!("=========");
+  let input = day_5::check("055 444 285");
+  println!("day5: {}", input);
 
-    println!("=========");
-    let input = day_7::movie(18, 40, 0.47);
-    println!("day7: {}", input);
+  println!("=========");
+  let input = day_7::movie(18, 40, 0.47);
+  println!("day7: {}", input);
 
-    println!("=========");
-    let input = day_8::annotate(&["  *  ", "  *  ", "*****", "  *  ", "  *  "]);
-    println!("day8: {:?}", input);
+  println!("=========");
+  let input = day_8::annotate(&["  *  ", "  *  ", "*****", "  *  ", "  *  "]);
+  println!("day8: {:?}", input);
 
-    println!("=========");
-    let m = day_9::mean("Rome", &da_ta());
-    let v = day_9::variance("Rome", &da_ta());
-    println!("day9: {}, {}", m, v);
+  println!("=========");
+  let m = day_9::mean("Rome", &da_ta());
+  let v = day_9::variance("Rome", &da_ta());
+  println!("day9: {}, {}", m, v);
 
-    println!("=========");
-    let x = day_10::frequency(&["aabbcccd", "eefg"], 4);
-    println!("day10: {:?}", x);
+  println!("=========");
+  let x = day_10::frequency(&["aabbcccd", "eefg"], 4);
+  println!("day10: {:?}", x);
 
-    println!("=========");
-    let hm = hashmap!(1 => "a",);
-    println!("day11: {:?}", hm);
+  println!("=========");
+  let hm = hashmap!(1 => "a",);
+  println!("day11: {:?}", hm);
 
-    println!("=========");
-    let str = day_12::strong(145);
-    println!("day12: 145 is {}", str);
+  println!("=========");
+  let str = day_12::strong(145);
+  println!("day12: 145 is {}", str);
 
-    println!("=========");
-    let num = day_13::allyourbase::convert(&[1, 2, 0], 2, 10);
-    match num {
-        Ok(val) => println!("day13: bin 10: {:?}", val),
-        Err(error) => println!("day13: err {:?}", error),
+  println!("=========");
+  let num = day_13::allyourbase::convert(&[1, 2, 0], 2, 10);
+  match num {
+    Ok(val) => println!("day13: bin 10: {:?}", val),
+    Err(error) => println!("day13: err {:?}", error),
+  }
+
+  println!("=========");
+  let allergy_score = 5;
+  let allergion = day_14::allergies::Allergies::new(allergy_score);
+  println!("day14: allergy score to {}", allergy_score);
+  for (i, item) in day_14::allergies::ALLERGENS.iter().enumerate() {
+    let al_score = 2i32.pow(i as u32);
+    match allergion.is_allergic_to(item) {
+      true => println!("allergic to {:?}({})", item, al_score),
+      false => println!("not allergic to {:?}({})", item, al_score),
     }
+  }
+  println!("{:?}", allergion.allergies());
 
-    println!("=========");
-    let allergy_score = 5;
-    let allergion = day_14::allergies::Allergies::new(allergy_score);
-    println!("day14: allergy score to {}", allergy_score);
-    for (i, item) in day_14::allergies::ALLERGENS.iter().enumerate() {
-        let al_score = 2i32.pow(i as u32);
-        match allergion.is_allergic_to(item) {
-            true => println!("allergic to {:?}({})", item, al_score),
-            false => println!("not allergic to {:?}({})", item, al_score),
-        }
-    }
-    println!("{:?}", allergion.allergies());
+  println!("=========");
+  let ans = day_15::jumping_number(12345);
+  println!("{}", ans);
 
-    println!("=========");
-    let ans = day_15::jumping_number(12345);
-    println!("{}", ans);
+  println!("=========");
+  let input = [
+    day_16::Direction::North,
+    day_16::Direction::South,
+    day_16::Direction::South,
+    day_16::Direction::East,
+    day_16::Direction::West,
+    day_16::Direction::North,
+    day_16::Direction::West,
+  ];
+  let dir = day_16::dir_reduc(&input);
+  println!("day16: dirs {:?}", dir);
 
-    println!("=========");
-    let input = [
-        day_16::Direction::North,
-        day_16::Direction::South,
-        day_16::Direction::South,
-        day_16::Direction::East,
-        day_16::Direction::West,
-        day_16::Direction::North,
-        day_16::Direction::West,
-    ];
-    let dir = day_16::dir_reduc(&input);
-    println!("day16: dirs {:?}", dir);
+  println!("=========");
 
-    println!("=========");
+  let mut game = day_17::BowlingGame::new();
 
-    let mut game = day_17::BowlingGame::new();
+  let _ = game.roll(10);
+  let _ = game.roll(10);
+  let _ = game.roll(10);
+  let _ = game.roll(5);
+  let _ = game.roll(3);
 
-    let _ = game.roll(10);
-    let _ = game.roll(10);
-    let _ = game.roll(10);
-    let _ = game.roll(5);
-    let _ = game.roll(3);
+  for _ in 0..12 {
+    let _ = game.roll(0);
+  }
+  println!("{:?}", game);
+  println!("{:?}", game.score());
 
-    for _ in 0..12 {
-        let _ = game.roll(0);
-    }
-    println!("{:?}", game);
-    println!("{:?}", game.score());
+  println!("=========");
+  let hd1 = day_19::hamming::hamming_distance("ATGC", "ATGC");
+  let hd2 = day_19::hamming::hamming_distance("ATGC", "ATGG");
+  let hd3 = day_19::hamming::hamming_distance("ATGC", "ATGGG");
 
-    println!("=========");
-    let hd1 = day_19::hamming::hamming_distance("ATGC", "ATGC");
-    let hd2 = day_19::hamming::hamming_distance("ATGC", "ATGG");
-    let hd3 = day_19::hamming::hamming_distance("ATGC", "ATGGG");
+  println!("day19: {:?}, {:?}, {:?}", hd1, hd2, hd3);
+  println!("=========");
 
-    println!("day19: {:?}, {:?}, {:?}", hd1, hd2, hd3);
-    println!("=========");
+  let mut s = day_20::grade_school::School::new();
+  s.add(3, "Chelsea");
+  s.add(7, "Logan");
+  println!("day20: {:?}", s.grades());
+  println!("day20: {:?}, {:?}", s.grade(3), s.grade(7));
 
-    let mut s = day_20::grade_school::School::new();
-    s.add(3, "Chelsea");
-    s.add(7, "Logan");
-    println!("day20: {:?}", s.grades());
-    println!("day20: {:?}, {:?}", s.grade(3), s.grade(7));
+  println!("=========");
+  // let isbn = "3-598-21508-8";
+  // let isbn = "3-598-21507-X";
+  let isbn = "3-598-2X507-9";
+  let is_isbn = day_21::is_valid_isbn(isbn);
+  println!("day21: {:?}, {:?}", isbn, is_isbn);
 
-    println!("=========");
-    // let isbn = "3-598-21508-8";
-    // let isbn = "3-598-21507-X";
-    let isbn = "3-598-2X507-9";
-    let is_isbn = day_21::is_valid_isbn(isbn);
-    println!("day21: {:?}, {:?}", isbn, is_isbn);
+  println!("=========");
+  let val = "ABBBCCCC  AA";
+  let rle_val = day_26::rle::encode(val);
+  println!("day26: {:?}, {:?}", val, rle_val);
 
-    println!("=========");
-    let val = "ABBBCCCC  AA";
-    let rle_val = day_26::rle::encode(val);
-    println!("day26: {:?}, {:?}", val, rle_val);
+  println!("=========");
+  let val = "D2A8B";
+  let rle_val = day_26::rle::decode(val);
+  println!("day26: {:?}, {:?}", val, rle_val);
 
-    println!("=========");
-    let val = "D2A8B";
-    let rle_val = day_26::rle::decode(val);
-    println!("day26: {:?}, {:?}", val, rle_val);
+  println!("=========");
+  let primes: Vec<u64> = vec![
+    5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 773, 967, 3461, 6131,
+  ];
+  let private_keys: Vec<u64> = primes
+    .iter()
+    .map(|x| day_27::diffie_hellman::private_key(*x))
+    .collect();
 
-    println!("=========");
-    let primes: Vec<u64> = vec![
-        5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 773, 967, 3461, 6131,
-    ];
-    let private_keys: Vec<u64> = primes
-        .iter()
-        .map(|x| day_27::diffie_hellman::private_key(*x))
-        .collect();
+  for i in 0..primes.len() {
+    println!("day27: pk: {}, p: {}", private_keys[i], primes[i]);
+  }
 
-    for i in 0..primes.len() {
-        println!("day27: pk: {}, p: {}", private_keys[i], primes[i]);
-    }
-
-    println!("=========");
-    println!("day_28: {:?}", day_28::sieve::primes_up_to(0));
-    println!("day_28: {:?}", day_28::sieve::primes_up_to(2));
-    println!("day_28: {:?}", day_28::sieve::primes_up_to(3));
-    println!("day_28: {:?}", day_28::sieve::primes_up_to(5));
-    println!("day_28: {:?}", day_28::sieve::primes_up_to(11));
-    println!("day_28: {:?}", day_28::sieve::primes_up_to(13));
+  println!("=========");
+  println!("day_28: {:?}", day_28::sieve::primes_up_to(0));
+  println!("day_28: {:?}", day_28::sieve::primes_up_to(2));
+  println!("day_28: {:?}", day_28::sieve::primes_up_to(3));
+  println!("day_28: {:?}", day_28::sieve::primes_up_to(5));
+  println!("day_28: {:?}", day_28::sieve::primes_up_to(11));
+  println!("day_28: {:?}", day_28::sieve::primes_up_to(13));
 }
 
 fn da_ta() -> String {
-    // don't move the string below
+  // don't move the string below
 
-    let dr0 = r#"Rome:Jan 81.2,Feb 63.2,Mar 70.3,Apr 55.7,May 53.0,Jun 36.4,Jul 17.5,Aug 27.5,Sep 60.9,Oct 117.7,Nov 111.0,Dec 97.9
+  let dr0 = r#"Rome:Jan 81.2,Feb 63.2,Mar 70.3,Apr 55.7,May 53.0,Jun 36.4,Jul 17.5,Aug 27.5,Sep 60.9,Oct 117.7,Nov 111.0,Dec 97.9
 London:Jan 48.0,Feb 38.9,Mar 39.9,Apr 42.2,May 47.3,Jun 52.1,Jul 59.5,Aug 57.2,Sep 55.4,Oct 62.0,Nov 59.0,Dec 52.9
 Paris:Jan 182.3,Feb 120.6,Mar 158.1,Apr 204.9,May 323.1,Jun 300.5,Jul 236.8,Aug 192.9,Sep 66.3,Oct 63.3,Nov 83.2,Dec 154.7
 NY:Jan 108.7,Feb 101.8,Mar 131.9,Apr 93.5,May 98.8,Jun 93.6,Jul 102.2,Aug 131.8,Sep 92.0,Oct 82.3,Nov 107.8,Dec 94.2
@@ -184,5 +185,5 @@ Tokyo:Jan 49.9,Feb 71.5,Mar 106.4,Apr 129.2,May 144.0,Jun 176.0,Jul 135.6,Aug 14
 Beijing:Jan 3.9,Feb 4.7,Mar 8.2,Apr 18.4,May 33.0,Jun 78.1,Jul 224.3,Aug 170.0,Sep 58.4,Oct 18.0,Nov 9.3,Dec 2.7
 Lima:Jan 1.2,Feb 0.9,Mar 0.7,Apr 0.4,May 0.6,Jun 1.8,Jul 4.4,Aug 3.1,Sep 3.3,Oct 1.7,Nov 0.5,Dec 0.7
 "#;
-    String::from(dr0)
+  String::from(dr0)
 }

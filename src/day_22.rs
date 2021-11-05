@@ -13,190 +13,190 @@
 #[allow(dead_code)]
 pub mod palindrome_products {
 
-    #[derive(Debug, PartialEq, Eq, Clone)]
-    pub struct Palindrome {
-        value: Option<u64>,
-        factors: Vec<(u64, u64)>,
+  #[derive(Debug, PartialEq, Eq, Clone)]
+  pub struct Palindrome {
+    value: Option<u64>,
+    factors: Vec<(u64, u64)>,
+  }
+
+  impl Default for Palindrome {
+    fn default() -> Palindrome {
+      Palindrome {
+        value: None,
+        factors: vec![],
+      }
+    }
+  }
+
+  impl Palindrome {
+    pub fn new(a: u64, b: u64) -> Palindrome {
+      Palindrome {
+        value: Some(a * b),
+        factors: vec![(a, b)],
+      }
     }
 
-    impl Default for Palindrome {
-        fn default() -> Palindrome {
-            Palindrome {
-                value: None,
-                factors: vec![],
+    pub fn value(&self) -> u64 {
+      self.value.unwrap()
+    }
+
+    pub fn insert(&mut self, a: u64, b: u64) {
+      self.factors.push((a, b))
+    }
+
+    pub fn contains_factors(&self, (f1, f2): (u64, u64)) -> bool {
+      self.factors.contains(&(f1, f2)) || self.factors.contains(&(f2, f1))
+    }
+  }
+
+  use std::collections::HashMap;
+
+  pub fn palindrome_products(min: u64, max: u64) -> Option<(Palindrome, Palindrome)> {
+    let mut min_prod = u64::MAX;
+    let mut max_prod = 0_u64;
+    let mut palins: HashMap<u64, Palindrome> = HashMap::new();
+    for i in min..=max {
+      for j in i..=max {
+        let prod = i * j;
+        if prod >= max_prod && is_palindrome(prod) {
+          max_prod = prod;
+          match palins.get_mut(&max_prod) {
+            Some(palindrome) => {
+              if !palindrome.contains_factors((i, j)) {
+                palindrome.insert(i, j);
+              }
             }
-        }
-    }
-
-    impl Palindrome {
-        pub fn new(a: u64, b: u64) -> Palindrome {
-            Palindrome {
-                value: Some(a * b),
-                factors: vec![(a, b)],
+            None => {
+              palins.insert(prod, Palindrome::new(i, j));
             }
+          }
         }
-
-        pub fn value(&self) -> u64 {
-            self.value.unwrap()
-        }
-
-        pub fn insert(&mut self, a: u64, b: u64) {
-            self.factors.push((a, b))
-        }
-
-        pub fn contains_factors(&self, (f1, f2): (u64, u64)) -> bool {
-            self.factors.contains(&(f1, f2)) || self.factors.contains(&(f2, f1))
-        }
-    }
-
-    use std::collections::HashMap;
-
-    pub fn palindrome_products(min: u64, max: u64) -> Option<(Palindrome, Palindrome)> {
-        let mut min_prod = u64::MAX;
-        let mut max_prod = 0_u64;
-        let mut palins: HashMap<u64, Palindrome> = HashMap::new();
-        for i in min..=max {
-            for j in i..=max {
-                let prod = i * j;
-                if prod >= max_prod && is_palindrome(prod) {
-                    max_prod = prod;
-                    match palins.get_mut(&max_prod) {
-                        Some(palindrome) => {
-                            if !palindrome.contains_factors((i, j)) {
-                                palindrome.insert(i, j);
-                            }
-                        }
-                        None => {
-                            palins.insert(prod, Palindrome::new(i, j));
-                        }
-                    }
-                }
-                if prod <= min_prod && is_palindrome(prod) {
-                    min_prod = prod;
-                    match palins.get_mut(&min_prod) {
-                        Some(palindrome) => {
-                            if !palindrome.contains_factors((i, j)) {
-                                palindrome.insert(i, j);
-                            }
-                        }
-                        None => {
-                            palins.insert(prod, Palindrome::new(i, j));
-                        }
-                    }
-                }
+        if prod <= min_prod && is_palindrome(prod) {
+          min_prod = prod;
+          match palins.get_mut(&min_prod) {
+            Some(palindrome) => {
+              if !palindrome.contains_factors((i, j)) {
+                palindrome.insert(i, j);
+              }
             }
+            None => {
+              palins.insert(prod, Palindrome::new(i, j));
+            }
+          }
         }
-
-        if max_prod != 0 {
-            Some((
-                palins.get(&min_prod).unwrap().clone(),
-                palins.get(&max_prod).unwrap().clone(),
-            ))
-        } else {
-            None
-        }
+      }
     }
 
-    fn is_palindrome(num: u64) -> bool {
-        if num < 10 {
-            return true;
-        }
-
-        let mut n = num;
-        let mut rev_num = 0;
-        let mut place = format!("{}", num).len() as u32;
-        while place > 0 {
-            place -= 1;
-            let d = n % 10;
-            rev_num += (10_i32.pow(place) * d as i32) as u64;
-            n /= 10;
-        }
-
-        num == rev_num
+    if max_prod != 0 {
+      Some((
+        palins.get(&min_prod).unwrap().clone(),
+        palins.get(&max_prod).unwrap().clone(),
+      ))
+    } else {
+      None
     }
+  }
+
+  fn is_palindrome(num: u64) -> bool {
+    if num < 10 {
+      return true;
+    }
+
+    let mut n = num;
+    let mut rev_num = 0;
+    let mut place = format!("{}", num).len() as u32;
+    while place > 0 {
+      place -= 1;
+      let d = n % 10;
+      rev_num += (10_i32.pow(place) * d as i32) as u64;
+      n /= 10;
+    }
+
+    num == rev_num
+  }
 }
 
 #[cfg(test)]
 mod test {
-    //! This test suite was generated by the rust exercise tool, which can be found at
-    //! https://github.com/exercism/rust/tree/main/util/exercise
-    use super::palindrome_products::{palindrome_products, Palindrome};
-    /// Process a single test case for the property `smallest`
-    ///
-    /// All cases for the `smallest` property are implemented
-    /// in terms of this function.
-    fn process_smallest_case(input: (u64, u64), expected: Option<Palindrome>) {
-        let min = palindrome_products(input.0, input.1).map(|(min, _)| min);
-        assert_eq!(min, expected);
-    }
-    /// Process a single test case for the property `largest`
-    ///
-    /// All cases for the `largest` property are implemented
-    /// in terms of this function.
-    fn process_largest_case(input: (u64, u64), expected: Option<Palindrome>) {
-        let max = palindrome_products(input.0, input.1).map(|(_, max)| max);
-        assert_eq!(max, expected);
-    }
-    #[test]
-    /// finds the smallest palindrome from single digit factors
-    fn test_finds_the_smallest_palindrome_from_single_digit_factors() {
-        process_smallest_case((1, 9), Some(Palindrome::new(1, 1)));
-    }
-    #[test]
-    /// finds the largest palindrome from single digit factors
-    fn test_finds_the_largest_palindrome_from_single_digit_factors() {
-        let mut expect = Palindrome::new(1, 9);
-        expect.insert(3, 3);
-        process_largest_case((1, 9), Some(expect));
-    }
-    #[test]
-    /// find the smallest palindrome from double digit factors
-    fn test_find_the_smallest_palindrome_from_double_digit_factors() {
-        process_smallest_case((10, 99), Some(Palindrome::new(11, 11)));
-    }
-    #[test]
-    /// find the largest palindrome from double digit factors
-    fn test_find_the_largest_palindrome_from_double_digit_factors() {
-        process_largest_case((10, 99), Some(Palindrome::new(91, 99)));
-    }
-    #[test]
-    /// find smallest palindrome from triple digit factors
-    fn test_find_smallest_palindrome_from_triple_digit_factors() {
-        process_smallest_case((100, 999), Some(Palindrome::new(101, 101)));
-    }
-    #[test]
-    /// find the largest palindrome from triple digit factors
-    fn test_find_the_largest_palindrome_from_triple_digit_factors() {
-        process_largest_case((100, 999), Some(Palindrome::new(913, 993)));
-    }
-    #[test]
-    /// find smallest palindrome from four digit factors
-    fn test_find_smallest_palindrome_from_four_digit_factors() {
-        process_smallest_case((1000, 9999), Some(Palindrome::new(1001, 1001)));
-    }
-    #[test]
-    /// find the largest palindrome from four digit factors
-    fn test_find_the_largest_palindrome_from_four_digit_factors() {
-        process_largest_case((1000, 9999), Some(Palindrome::new(9901, 9999)));
-    }
-    #[test]
-    /// empty result for smallest if no palindrome in the range
-    fn test_empty_result_for_smallest_if_no_palindrome_in_the_range() {
-        process_smallest_case((1002, 1003), None);
-    }
-    #[test]
-    /// empty result for largest if no palindrome in the range
-    fn test_empty_result_for_largest_if_no_palindrome_in_the_range() {
-        process_largest_case((15, 15), None);
-    }
-    #[test]
-    /// error result for smallest if min is more than max
-    fn test_error_result_for_smallest_if_min_is_more_than_max() {
-        process_smallest_case((10000, 1), None);
-    }
-    #[test]
-    /// error result for largest if min is more than max
-    fn test_error_result_for_largest_if_min_is_more_than_max() {
-        process_largest_case((2, 1), None);
-    }
+  //! This test suite was generated by the rust exercise tool, which can be found at
+  //! https://github.com/exercism/rust/tree/main/util/exercise
+  use super::palindrome_products::{palindrome_products, Palindrome};
+  /// Process a single test case for the property `smallest`
+  ///
+  /// All cases for the `smallest` property are implemented
+  /// in terms of this function.
+  fn process_smallest_case(input: (u64, u64), expected: Option<Palindrome>) {
+    let min = palindrome_products(input.0, input.1).map(|(min, _)| min);
+    assert_eq!(min, expected);
+  }
+  /// Process a single test case for the property `largest`
+  ///
+  /// All cases for the `largest` property are implemented
+  /// in terms of this function.
+  fn process_largest_case(input: (u64, u64), expected: Option<Palindrome>) {
+    let max = palindrome_products(input.0, input.1).map(|(_, max)| max);
+    assert_eq!(max, expected);
+  }
+  #[test]
+  /// finds the smallest palindrome from single digit factors
+  fn test_finds_the_smallest_palindrome_from_single_digit_factors() {
+    process_smallest_case((1, 9), Some(Palindrome::new(1, 1)));
+  }
+  #[test]
+  /// finds the largest palindrome from single digit factors
+  fn test_finds_the_largest_palindrome_from_single_digit_factors() {
+    let mut expect = Palindrome::new(1, 9);
+    expect.insert(3, 3);
+    process_largest_case((1, 9), Some(expect));
+  }
+  #[test]
+  /// find the smallest palindrome from double digit factors
+  fn test_find_the_smallest_palindrome_from_double_digit_factors() {
+    process_smallest_case((10, 99), Some(Palindrome::new(11, 11)));
+  }
+  #[test]
+  /// find the largest palindrome from double digit factors
+  fn test_find_the_largest_palindrome_from_double_digit_factors() {
+    process_largest_case((10, 99), Some(Palindrome::new(91, 99)));
+  }
+  #[test]
+  /// find smallest palindrome from triple digit factors
+  fn test_find_smallest_palindrome_from_triple_digit_factors() {
+    process_smallest_case((100, 999), Some(Palindrome::new(101, 101)));
+  }
+  #[test]
+  /// find the largest palindrome from triple digit factors
+  fn test_find_the_largest_palindrome_from_triple_digit_factors() {
+    process_largest_case((100, 999), Some(Palindrome::new(913, 993)));
+  }
+  #[test]
+  /// find smallest palindrome from four digit factors
+  fn test_find_smallest_palindrome_from_four_digit_factors() {
+    process_smallest_case((1000, 9999), Some(Palindrome::new(1001, 1001)));
+  }
+  #[test]
+  /// find the largest palindrome from four digit factors
+  fn test_find_the_largest_palindrome_from_four_digit_factors() {
+    process_largest_case((1000, 9999), Some(Palindrome::new(9901, 9999)));
+  }
+  #[test]
+  /// empty result for smallest if no palindrome in the range
+  fn test_empty_result_for_smallest_if_no_palindrome_in_the_range() {
+    process_smallest_case((1002, 1003), None);
+  }
+  #[test]
+  /// empty result for largest if no palindrome in the range
+  fn test_empty_result_for_largest_if_no_palindrome_in_the_range() {
+    process_largest_case((15, 15), None);
+  }
+  #[test]
+  /// error result for smallest if min is more than max
+  fn test_error_result_for_smallest_if_min_is_more_than_max() {
+    process_smallest_case((10000, 1), None);
+  }
+  #[test]
+  /// error result for largest if min is more than max
+  fn test_error_result_for_largest_if_min_is_more_than_max() {
+    process_largest_case((2, 1), None);
+  }
 }

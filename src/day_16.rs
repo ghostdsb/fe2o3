@@ -29,49 +29,49 @@ In ["NORTH", "EAST", "WEST", "SOUTH", "WEST", "WEST"], "NORTH" and "SOUTH" are n
 */
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Direction {
-    North,
-    East,
-    West,
-    South,
+  North,
+  East,
+  West,
+  South,
 }
 
 pub fn dir_reduc(arr: &[Direction]) -> Vec<Direction> {
-    let mut vec_dir = vec![];
-    for dir in arr.iter() {
-        match (dir, vec_dir.last()) {
-            (Direction::North, Some(Direction::South)) => {
-                vec_dir.pop();
-            }
-            (Direction::South, Some(Direction::North)) => {
-                vec_dir.pop();
-            }
-            (Direction::East, Some(Direction::West)) => {
-                vec_dir.pop();
-            }
-            (Direction::West, Some(Direction::East)) => {
-                vec_dir.pop();
-            }
-            (dir1, _) => {
-                vec_dir.push(*dir1);
-            }
-        }
+  let mut vec_dir = vec![];
+  for dir in arr.iter() {
+    match (dir, vec_dir.last()) {
+      (Direction::North, Some(Direction::South)) => {
+        vec_dir.pop();
+      }
+      (Direction::South, Some(Direction::North)) => {
+        vec_dir.pop();
+      }
+      (Direction::East, Some(Direction::West)) => {
+        vec_dir.pop();
+      }
+      (Direction::West, Some(Direction::East)) => {
+        vec_dir.pop();
+      }
+      (dir1, _) => {
+        vec_dir.push(*dir1);
+      }
     }
-    vec_dir
+  }
+  vec_dir
 }
 
 #[cfg(test)]
 mod tests {
-    use super::{dir_reduc, Direction::*};
+  use super::{dir_reduc, Direction::*};
 
-    #[test]
-    fn with_duplicates() {
-        let a = [North, South, South, East, West, North, West];
-        assert_eq!(dir_reduc(&a), [West]);
-    }
+  #[test]
+  fn with_duplicates() {
+    let a = [North, South, South, East, West, North, West];
+    assert_eq!(dir_reduc(&a), [West]);
+  }
 
-    #[test]
-    fn as_it_is() {
-        let a = [North, West, South, East];
-        assert_eq!(dir_reduc(&a), [North, West, South, East]);
-    }
+  #[test]
+  fn as_it_is() {
+    let a = [North, West, South, East];
+    assert_eq!(dir_reduc(&a), [North, West, South, East]);
+  }
 }

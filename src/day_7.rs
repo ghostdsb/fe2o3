@@ -14,43 +14,43 @@ when rounded up to the next dollar, will be cheaper than System A.
  */
 
 pub fn movie(card: i32, ticket: i32, perc: f64) -> i32 {
-    let mut system_b = card as f64;
-    for day in 1.. {
-        let system_a = (ticket * day) as f64;
-        system_b += ticket as f64 * f64::powf(perc, day as f64);
-        if system_a > system_b.ceil() {
-            return day;
-        }
+  let mut system_b = card as f64;
+  for day in 1.. {
+    let system_a = (ticket * day) as f64;
+    system_b += ticket as f64 * f64::powf(perc, day as f64);
+    if system_a > system_b.ceil() {
+      return day;
     }
-    0
+  }
+  0
 }
 
 #[cfg(test)]
 mod tests {
-    use super::*;
+  use super::*;
 
-    fn dotest(card: i32, ticket: i32, perc: f64, exp: i32) -> () {
-        let ans = movie(card, ticket, perc);
-        assert_eq!(ans, exp);
-    }
+  fn dotest(card: i32, ticket: i32, perc: f64, exp: i32) -> () {
+    let ans = movie(card, ticket, perc);
+    assert_eq!(ans, exp);
+  }
 
-    #[test]
-    fn basic_tests() {
-        dotest(500, 15, 0.9, 43);
-        dotest(100, 10, 0.95, 24);
-        dotest(0, 10, 0.95, 2);
-    }
-    #[test]
-    fn extended_tests() {
-        dotest(1114, 15, 0.63, 77);
-    }
-    #[test]
-    fn ceil_tests() {
-        dotest(2500, 20, 0.9, 135);
-    }
+  #[test]
+  fn basic_tests() {
+    dotest(500, 15, 0.9, 43);
+    dotest(100, 10, 0.95, 24);
+    dotest(0, 10, 0.95, 2);
+  }
+  #[test]
+  fn extended_tests() {
+    dotest(1114, 15, 0.63, 77);
+  }
+  #[test]
+  fn ceil_tests() {
+    dotest(2500, 20, 0.9, 135);
+  }
 
-    #[test]
-    fn ceil_tests_2() {
-        dotest(18, 40, 0.47, 1);
-    }
+  #[test]
+  fn ceil_tests_2() {
+    dotest(18, 40, 0.47, 1);
+  }
 }

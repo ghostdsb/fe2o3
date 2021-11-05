@@ -12,19 +12,19 @@
 #[allow(unused)]
 
 pub mod collatz_conjecture {
-    pub fn collatz(n: u64) -> Option<u64> {
-        let mut x = n;
-        let mut steps = 0;
-        while x != 1 {
-            if x >= u64::MAX / 3 && x % 2 == 1 || x == 0 {
-                return None;
-            }
-            x = match x % 2 == 0 {
-                true => x / 2,
-                false => 3 * x + 1,
-            };
-            steps += 1;
-        }
-        Some(steps)
+  pub fn collatz(n: u64) -> Option<u64> {
+    let mut x = n;
+    let mut steps = 0;
+    while x != 1 {
+      if x >= u64::MAX / 3 && x % 2 == 1 || x == 0 {
+        return None;
+      }
+      x = match x % 2 == 0 {
+        true => x / 2,
+        false => 3 * x + 1,
+      };
+      steps += 1;
     }
+    Some(steps)
+  }
 }
