@@ -29,3 +29,5 @@ One rust exercise daily.
 25. [collatz conjecture](./src/day_25.rs) 
 26. [run length encoding](./src/day_26.rs) 
 27. [Diffie Hellman](./src/day_27.rs) 
+28. [Sieve of Eratosthenes](./src/day_28.rs) 
+29. [triangles](./src/day_29.rs) 
