@@ -22,6 +22,7 @@ mod day_28;
 mod day_29;
 mod day_3;
 mod day_30;
+mod day_31;
 mod day_4;
 mod day_5;
 mod day_6;
@@ -169,6 +170,10 @@ fn main() {
   println!("day_28: {:?}", day_28::sieve::primes_up_to(5));
   println!("day_28: {:?}", day_28::sieve::primes_up_to(11));
   println!("day_28: {:?}", day_28::sieve::primes_up_to(13));
+  
+  println!("=========");
+  let place = "Varanasi";
+  day_31::hello(place);
 }
 
 fn da_ta() -> String {
