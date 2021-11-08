@@ -33,3 +33,4 @@ One rust exercise daily.
 29. [triangles](./src/day_29.rs) 
 30. [pythagorean triplets](./src/day_30.rs) 
 31. [vacay](./src/day_31.rs) 
+32. [robot simulator](./src/day_32.rs) 
