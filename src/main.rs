@@ -25,6 +25,7 @@ mod day_30;
 mod day_31;
 mod day_32;
 mod day_33;
+mod day_34;
 mod day_4;
 mod day_5;
 mod day_6;
@@ -176,6 +177,17 @@ fn main() {
   println!("=========");
   let place = "Varanasi";
   day_31::hello(place);
+
+  println!("=========");
+  let input = "Allegoric Alaskans;Blithering Badgers;win\n".to_string()
+    + "Devastating Donkeys;Courageous Californians;draw\n"
+    + "Devastating Donkeys;Allegoric Alaskans;win\n"
+    + "Courageous Californians;Blithering Badgers;loss\n"
+    + "Blithering Badgers;Devastating Donkeys;loss\n"
+    + "Allegoric Alaskans;Courageous Californians;win";
+  let table = day_34::tournament::tally(&input);
+
+  println!("day_34: \n{}", table);
 }
 
 fn da_ta() -> String {
