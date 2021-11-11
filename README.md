@@ -36,3 +36,4 @@ One rust exercise daily.
 32. [robot simulator](./src/day_32.rs) 
 33. [saddle points](./src/day_33.rs) 
 34. [tournament](./src/day_34.rs) 
+35. [acronym](./src/day_35.rs) 
