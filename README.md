@@ -37,3 +37,4 @@ One rust exercise daily.
 33. [saddle points](./src/day_33.rs) 
 34. [tournament](./src/day_34.rs) 
 35. [acronym](./src/day_35.rs) 
+36. [phone number](./src/day_36.rs) 
