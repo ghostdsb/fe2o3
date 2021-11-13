@@ -39,3 +39,4 @@ One rust exercise daily.
 35. [acronym](./src/day_35.rs) 
 36. [phone number](./src/day_36.rs) 
 37. [accumulate](./src/day_37.rs) 
+38. [rna-transcription](./src/day_38.rs) 
