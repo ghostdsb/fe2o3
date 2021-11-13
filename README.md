@@ -38,3 +38,4 @@ One rust exercise daily.
 34. [tournament](./src/day_34.rs) 
 35. [acronym](./src/day_35.rs) 
 36. [phone number](./src/day_36.rs) 
+37. [accumulate](./src/day_37.rs) 
