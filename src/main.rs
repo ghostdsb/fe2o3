@@ -29,6 +29,7 @@ mod day_34;
 mod day_35;
 mod day_36;
 mod day_37;
+mod day_39;
 mod day_4;
 mod day_5;
 mod day_6;
@@ -196,6 +197,10 @@ fn main() {
   let x: Vec<i32> = day_37::accumulate::map(vec![1, 2, 3], |c: i32| c * c);
 
   println!("day_37: {:?}", x);
+
+  println!("=========");
+  let x = day_39::num_primorial(6_usize);
+  println!("{:?}", x);
 }
 
 fn da_ta() -> String {

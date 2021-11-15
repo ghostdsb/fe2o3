@@ -1,3 +1,4 @@
+#[allow(unused)]
 pub mod phone_number {
 
   pub fn number(user_number: &str) -> Option<String> {
