@@ -42,3 +42,4 @@ One rust exercise daily.
 38. [rna-transcription](./src/day_38.rs) 
 39. [primorial](./src/day_39.rs) 
 40. [water tank](./src/day_40.rs) 
+41. [generic fizzbuzz](./src/day_41.rs) 
