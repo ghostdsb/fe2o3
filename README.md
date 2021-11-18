@@ -43,3 +43,4 @@ One rust exercise daily.
 39. [primorial](./src/day_39.rs) 
 40. [water tank](./src/day_40.rs) 
 41. [generic fizzbuzz](./src/day_41.rs) 
+42. [custom set](./src/day_42.rs) 
