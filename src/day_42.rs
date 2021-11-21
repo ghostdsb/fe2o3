@@ -1,3 +1,4 @@
+#[allow(unused)]
 pub mod custom_set {
   #[derive(Debug)]
   pub struct CustomSet<T> {

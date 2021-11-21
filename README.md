@@ -46,3 +46,4 @@ One rust exercise daily.
 42. [custom set](./src/day_42.rs) 
 43. [protein translation](./src/day_43.rs) 
 44. [rotational cipher](./src/day_44.rs) 
+45. [persistent bugger](./src/day_45.rs) 

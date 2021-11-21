@@ -35,6 +35,8 @@ mod day_40;
 mod day_41;
 mod day_42;
 mod day_43;
+mod day_44;
+mod day_45;
 mod day_5;
 mod day_6;
 mod day_7;
@@ -208,6 +210,12 @@ fn main() {
 
   println!("=========");
   let _x = day_40::tank_vol(0, 0, 0);
+
+  println!("=========");
+  let x = day_45::persistence(4);
+  println!("x: {}", x);
+  let x = day_45::persistence(39);
+  println!("x: {}", x);
 }
 
 fn da_ta() -> String {
