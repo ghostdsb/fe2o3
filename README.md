@@ -49,3 +49,4 @@ One rust exercise daily.
 45. [persistent bugger](./src/day_45.rs) 
 46. [simple cipher](./src/day_46.rs) 
 47. [atbash cipher](./src/day_47.rs) 
+48. [affine cipher](./src/day_48.rs) 
