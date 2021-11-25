@@ -37,6 +37,7 @@ mod day_42;
 mod day_43;
 mod day_44;
 mod day_45;
+mod day_49;
 mod day_5;
 mod day_6;
 mod day_7;
@@ -216,6 +217,18 @@ fn main() {
   println!("x: {}", x);
   let x = day_45::persistence(39);
   println!("x: {}", x);
+
+  println!("=========");
+  let b1 = r#"
+1000.00
+125 Market 125.45
+126 Hardware 34.95
+127 Video 7.45
+128 Book 14.32
+129 Gasoline 16.10
+"#;
+  let x = day_49::ledger::balance(b1);
+  println!("x: \n{}", x);
 }
 
 fn da_ta() -> String {
