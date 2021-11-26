@@ -39,6 +39,7 @@ mod day_44;
 mod day_45;
 mod day_49;
 mod day_5;
+mod day_50;
 mod day_6;
 mod day_7;
 mod day_8;

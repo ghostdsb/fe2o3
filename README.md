@@ -51,3 +51,4 @@ One rust exercise daily.
 47. [atbash cipher](./src/day_47.rs) 
 48. [affine cipher](./src/day_48.rs) 
 49. [balance sheet](./src/day_49.rs) 
+50. [word count](./src/day_50.rs) 
