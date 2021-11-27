@@ -40,6 +40,7 @@ mod day_45;
 mod day_49;
 mod day_5;
 mod day_50;
+mod day_51;
 mod day_6;
 mod day_7;
 mod day_8;
@@ -230,6 +231,10 @@ fn main() {
 "#;
   let x = day_49::ledger::balance(b1);
   println!("x: \n{}", x);
+
+  println!("=========");
+  let x = day_51::simpson(290);
+  println!("day_51: {}", x);
 }
 
 fn da_ta() -> String {

@@ -52,3 +52,4 @@ One rust exercise daily.
 48. [affine cipher](./src/day_48.rs) 
 49. [balance sheet](./src/day_49.rs) 
 50. [word count](./src/day_50.rs) 
+51. [simpson rule](./src/day_51.rs) 
