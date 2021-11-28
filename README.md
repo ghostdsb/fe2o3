@@ -53,3 +53,4 @@ One rust exercise daily.
 49. [balance sheet](./src/day_49.rs) 
 50. [word count](./src/day_50.rs) 
 51. [simpson rule](./src/day_51.rs) 
+52. [circular buffer](./src/day_52.rs) 
