@@ -1,3 +1,4 @@
+#[allow(unused)]
 pub mod circular_buffer {
 
   pub struct CircularBuffer<T> {

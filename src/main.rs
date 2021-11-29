@@ -42,6 +42,7 @@ mod day_5;
 mod day_50;
 mod day_51;
 mod day_52;
+mod day_53;
 mod day_6;
 mod day_7;
 mod day_8;
@@ -236,6 +237,10 @@ fn main() {
   println!("=========");
   let x = day_51::simpson(290);
   println!("day_51: {}", x);
+
+  println!("=========");
+  let x = day_53::list_squared(1, 250);
+  println!("day_53: {:?}", x);
 }
 
 fn da_ta() -> String {
