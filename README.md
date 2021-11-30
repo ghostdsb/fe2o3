@@ -55,3 +55,4 @@ One rust exercise daily.
 51. [simpson rule](./src/day_51.rs) 
 52. [circular buffer](./src/day_52.rs) 
 53. [square factor sum](./src/day_53.rs) 
+54. [buddy numbers](./src/day_54.rs) 

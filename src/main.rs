@@ -43,6 +43,7 @@ mod day_50;
 mod day_51;
 mod day_52;
 mod day_53;
+mod day_54;
 mod day_6;
 mod day_7;
 mod day_8;
@@ -240,6 +241,10 @@ fn main() {
 
   println!("=========");
   let x = day_53::list_squared(1, 250);
+  println!("day_53: {:?}", x);
+
+  println!("=========");
+  let x = day_54::buddy(10, 50);
   println!("day_53: {:?}", x);
 }
 
