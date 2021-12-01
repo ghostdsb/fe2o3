@@ -56,4 +56,4 @@ One rust exercise daily.
 52. [circular buffer](./src/day_52.rs) 
 53. [square factor sum](./src/day_53.rs) 
 54. [buddy numbers](./src/day_54.rs) 
-55. [AOC2021: day1](https://github.com/ghostdsb/aoc_2021/blob/master/src/day_1.rs) 
+55. [AOC2021: day1](https://github.com/ghostdsb/aoc_2021/blob/master/src/day_1.rs ) 
