@@ -61,3 +61,4 @@ One rust exercise daily.
 57. [AOC2021: day3](https://github.com/ghostdsb/aoc_2021/blob/master/src/day_3.rs ) 
 58. [AOC2021: day4](https://github.com/ghostdsb/aoc_2021/blob/master/src/day_4.rs ) 
 59. [AOC2021: day4](https://github.com/ghostdsb/aoc_2021/blob/master/src/day_5.rs ) 
+60. [AOC2021: day4](https://github.com/ghostdsb/aoc_2021/blob/master/src/day_6.rs ) 
