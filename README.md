@@ -69,3 +69,4 @@ One rust exercise daily.
 65. [AOC2021: day11](https://github.com/ghostdsb/aoc_2021/blob/master/src/day_11.rs ) 
 66. [AOC2021: day12](https://github.com/ghostdsb/aoc_2021/blob/master/src/day_12.rs ) 
 67. [AOC2021: day13](https://github.com/ghostdsb/aoc_2021/blob/master/src/day_13.rs ) 
+68. [Braking Physics](./src/day_68.rs ) 
