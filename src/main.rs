@@ -47,6 +47,7 @@ mod day_54;
 mod day_6;
 mod day_68;
 mod day_7;
+mod day_70;
 mod day_8;
 mod day_9;
 
@@ -246,6 +247,17 @@ fn main() {
 
   println!("=========");
   let x = day_54::buddy(10, 50);
+  println!("day_53: {:?}", x);
+
+  println!("=========");
+  const FIGHTERS: [[&str; 6]; 2] = [
+    ["Ryu", "E.Honda", "Blanka", "Guile", "Balrog", "Vega"],
+    ["Ken", "Chun Li", "Zangief", "Dhalsim", "Sagat", "M.Bison"],
+  ];
+
+  use day_70::Direction::*;
+  let moves = [Left, Left, Left, Left, Left, Left, Left, Left];
+  let x = day_70::street_fighter_selection(&FIGHTERS, &[0, 0], &moves);
   println!("day_53: {:?}", x);
 }
 
