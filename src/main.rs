@@ -48,6 +48,7 @@ mod day_6;
 mod day_68;
 mod day_7;
 mod day_70;
+mod day_71;
 mod day_8;
 mod day_9;
 
@@ -259,6 +260,10 @@ fn main() {
   let moves = [Left, Left, Left, Left, Left, Left, Left, Left];
   let x = day_70::street_fighter_selection(&FIGHTERS, &[0, 0], &moves);
   println!("day_53: {:?}", x);
+
+  println!("=========");
+  let x = day_71::prime_factors(7775460);
+  println!("day_71: {:?}", x);
 }
 
 fn da_ta() -> String {
