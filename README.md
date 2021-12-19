@@ -74,3 +74,4 @@ One rust exercise daily.
 69. [AOC2021: day15](https://github.com/ghostdsb/aoc_2021/blob/master/src/day_15.rs ) 
 70. [Street Fighter 2 - Character Selection](./src/day_70.rs ) 
 71. [Prime Factorization Display](./src/day_71.rs ) 
+72. [Street Fighter 2 - Character Selection Part 2](./src/day_72.rs ) 
