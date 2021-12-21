@@ -51,6 +51,7 @@ mod day_70;
 mod day_71;
 mod day_72;
 mod day_73;
+mod day_74;
 mod day_8;
 mod day_9;
 
@@ -266,6 +267,10 @@ fn main() {
   println!("=========");
   let x = day_71::prime_factors(7775460);
   println!("day_71: {:?}", x);
+
+  println!("=========");
+  let x = day_74::two_set::solve(7);
+  println!("day_74: {:?}", x);
 }
 
 fn da_ta() -> String {

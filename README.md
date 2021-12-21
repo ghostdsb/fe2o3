@@ -75,3 +75,5 @@ One rust exercise daily.
 70. [Street Fighter 2 - Character Selection](./src/day_70.rs ) 
 71. [Prime Factorization Display](./src/day_71.rs ) 
 72. [Street Fighter 2 - Character Selection Part 2](./src/day_72.rs ) 
+73. [Largest Series Product](./src/day_73.rs ) 
+74. [CSES: Two Sets](./src/day_74.rs ) 
