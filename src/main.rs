@@ -52,6 +52,7 @@ mod day_71;
 mod day_72;
 mod day_73;
 mod day_74;
+mod day_75;
 mod day_8;
 mod day_9;
 
@@ -271,6 +272,10 @@ fn main() {
   println!("=========");
   let x = day_74::two_set::solve(7);
   println!("day_74: {:?}", x);
+
+  println!("=========");
+  let x = day_75::factorial_trailing_zero::solve(20);
+  println!("day_75: {:?}", x);
 }
 
 fn da_ta() -> String {

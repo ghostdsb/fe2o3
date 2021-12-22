@@ -1,4 +1,5 @@
 #[derive(Debug, Copy, Clone, PartialEq)]
+#[allow(unused)]
 pub enum Direction {
   Up,
   Down,
@@ -12,12 +13,14 @@ pub struct Position {
   pub y: usize,
 }
 
+#[allow(unused)]
 impl Position {
   pub fn new(x: usize, y: usize) -> Self {
     Self { x, y }
   }
 }
 
+#[allow(unused)]
 fn super_street_fighter_selection(
   fighters: &[&[&str]],
   position: Position,

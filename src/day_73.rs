@@ -1,3 +1,4 @@
+#[allow(unused)]
 pub mod largest_series_product {
 
   #[derive(Debug, PartialEq)]

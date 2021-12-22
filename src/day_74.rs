@@ -34,7 +34,7 @@ Output:
 NO
 
 */
-
+#[allow(unused)]
 pub mod two_set {
   use std::fmt::Write;
   use std::io;
