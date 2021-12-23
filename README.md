@@ -77,3 +77,5 @@ One rust exercise daily.
 72. [Street Fighter 2 - Character Selection Part 2](./src/day_72.rs ) 
 73. [Largest Series Product](./src/day_73.rs ) 
 74. [CSES: Two Sets](./src/day_74.rs ) 
+75. [CSES: Factorial trialing zeros](./src/day_75.rs ) 
+76. [Word to initial number](./src/day_76.rs ) 
