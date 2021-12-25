@@ -80,3 +80,4 @@ One rust exercise daily.
 75. [CSES: Factorial trialing zeros](./src/day_75.rs ) 
 76. [Word to initial number](./src/day_76.rs ) 
 77. [Lottery ticket](./src/day_77.rs ) 
+78. [Sort the odd](./src/day_78.rs ) 
