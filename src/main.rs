@@ -56,6 +56,7 @@ mod day_75;
 mod day_76;
 mod day_77;
 mod day_78;
+mod day_79;
 mod day_8;
 mod day_9;
 
@@ -283,6 +284,10 @@ fn main() {
   println!("=========");
   let x = day_76::convert("ABC");
   println!("day_76: {:?}", x);
+
+  println!("=========");
+  let x = day_79::uncollapse("onetwo");
+  println!("day_79: {:?}", x);
 }
 
 fn da_ta() -> String {

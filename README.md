@@ -81,3 +81,4 @@ One rust exercise daily.
 76. [Word to initial number](./src/day_76.rs ) 
 77. [Lottery ticket](./src/day_77.rs ) 
 78. [Sort the odd](./src/day_78.rs ) 
+79. [Uncollapse digits](./src/day_79.rs ) 
