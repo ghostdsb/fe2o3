@@ -59,6 +59,7 @@ mod day_78;
 mod day_79;
 mod day_8;
 mod day_80;
+mod day_81;
 mod day_9;
 
 fn main() {
@@ -293,6 +294,10 @@ fn main() {
   println!("=========");
   let x = day_80::weigh_the_list(vec![1, 2, 3, 4, 5, 6]);
   println!("day_80: {:?}", x);
+
+  println!("=========");
+  let x = day_81::convert_fracts(vec![(690, 1300), (870, 13100), (30, 40)]);
+  println!("day_81: {:?}", x);
 }
 
 fn da_ta() -> String {

@@ -83,3 +83,4 @@ One rust exercise daily.
 78. [Sort the odd](./src/day_78.rs ) 
 79. [Uncollapse digits](./src/day_79.rs ) 
 80. [Weighted zero sum](./src/day_80.rs ) 
+81. [Common Denominators](./src/day_81.rs ) 
