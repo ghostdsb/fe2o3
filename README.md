@@ -84,3 +84,4 @@ One rust exercise daily.
 79. [Uncollapse digits](./src/day_79.rs ) 
 80. [Weighted zero sum](./src/day_80.rs ) 
 81. [Common Denominators](./src/day_81.rs ) 
+82. [Diophantine Solution](./src/day_82.rs ) 
