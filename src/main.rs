@@ -61,6 +61,7 @@ mod day_8;
 mod day_80;
 mod day_81;
 mod day_82;
+mod day_83;
 mod day_9;
 
 fn main() {
