@@ -87,3 +87,5 @@ One rust exercise daily.
 82. [Diophantine Solution](./src/day_82.rs ) 
 83. [Curve length](./src/day_83.rs ) 
 84. [Chess board](https://github.com/ghostdsb/sokka) 
+85. [Chess board](https://github.com/ghostdsb/sokka) 
+86. [Interpreter MSF](./src/day_86.rs) 
