@@ -89,3 +89,4 @@ One rust exercise daily.
 84. [Chess board](https://github.com/ghostdsb/sokka) 
 85. [Chess board](https://github.com/ghostdsb/sokka) 
 86. [Interpreter MSF](./src/day_86.rs) 
+86. [Interpreter SF](./src/day_87.rs) 
