@@ -91,3 +91,4 @@ One rust exercise daily.
 86. [Interpreter MSF](./src/day_86.rs) 
 87. [Interpreter SF](./src/day_87.rs) 
 88. [Rocket Science](./src/day_88.rs) 
+89. [Interpreter SF-2](./src/day_89.rs) 

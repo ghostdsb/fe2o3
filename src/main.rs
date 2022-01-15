@@ -65,6 +65,7 @@ mod day_83;
 mod day_86;
 mod day_87;
 mod day_88;
+mod day_89;
 mod day_9;
 
 fn main() {
@@ -309,9 +310,27 @@ fn main() {
   println!("day_86: {:?}", x);
 
   println!("=========");
-  let tape = "111";
-  let x = day_87::sf("*>>*", tape);
-  println!("day_87: {:?}", x);
+  // let tape = "111";
+  let x = day_89::sf("*", "00101100");
+  println!("day_89: {:?}", x);
+  let x = day_89::sf(">*>*", "00101100");
+  println!("day_89: {:?}", x);
+  let x = day_89::sf("*>*>*>*>*>*>*>*", "00101100");
+  println!("day_89: {:?}", x);
+  let x = day_89::sf("*>*>>*>>>*>*", "00101100");
+  println!("day_89: {:?}", x);
+  let x = day_89::sf("<>*", "00");
+  println!("day_89: {:?}", x);
+  let x = day_89::sf("[*>[>*>]>]", "11001");
+  println!("day_89: {:?}", x);
+  let x = day_89::sf("[>[*>*>*>]>]", "10110");
+  println!("day_89: {:?}", x);
+  let x = day_89::sf("*[>*]", &"0".repeat(256));
+  println!("day_89: {:?}", x);
+
+  // let c = "[*[>*]]";
+  // let p = day_89::move_command_cursor(c, ']', 6_i32);
+  // println!("day_89::p {:?}", p);
 
   println!("=========");
   let x = day_88::rocket_fuel(11186.0);
