@@ -67,6 +67,7 @@ mod day_87;
 mod day_88;
 mod day_89;
 mod day_9;
+mod day_90;
 
 fn main() {
   println!("Daily Rust Exercise");
@@ -311,21 +312,21 @@ fn main() {
 
   println!("=========");
   // let tape = "111";
-  let x = day_89::sf("*", "00101100");
+  let x = day_89::smallfuck::interpreter("*", "00101100");
   println!("day_89: {:?}", x);
-  let x = day_89::sf(">*>*", "00101100");
+  let x = day_89::smallfuck::interpreter(">*>*", "00101100");
   println!("day_89: {:?}", x);
-  let x = day_89::sf("*>*>*>*>*>*>*>*", "00101100");
+  let x = day_89::smallfuck::interpreter("*>*>*>*>*>*>*>*", "00101100");
   println!("day_89: {:?}", x);
-  let x = day_89::sf("*>*>>*>>>*>*", "00101100");
+  let x = day_89::smallfuck::interpreter("*>*>>*>>>*>*", "00101100");
   println!("day_89: {:?}", x);
-  let x = day_89::sf("<>*", "00");
+  let x = day_89::smallfuck::interpreter("<>*", "00");
   println!("day_89: {:?}", x);
-  let x = day_89::sf("[*>[>*>]>]", "11001");
+  let x = day_89::smallfuck::interpreter("[*>[>*>]>]", "11001");
   println!("day_89: {:?}", x);
-  let x = day_89::sf("[>[*>*>*>]>]", "10110");
+  let x = day_89::smallfuck::interpreter("[>[*>*>*>]>]", "10110");
   println!("day_89: {:?}", x);
-  let x = day_89::sf("*[>*]", &"0".repeat(256));
+  let x = day_89::smallfuck::interpreter("*[>*]", &"0".repeat(256));
   println!("day_89: {:?}", x);
 
   // let c = "[*[>*]]";
@@ -335,6 +336,10 @@ fn main() {
   println!("=========");
   let x = day_88::rocket_fuel(11186.0);
   println!("day_88: {:?}", x);
+
+  println!("=========");
+  let x = day_90::paintfuck::interpreter("*e*e*e*es*es*ws*ws*w*w*w*n*n*n*ssss*s*s*s*", 100, 6, 9);
+  println!("day_90: {:?}", x);
 }
 
 fn da_ta() -> String {
