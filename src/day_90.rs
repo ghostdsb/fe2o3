@@ -57,11 +57,23 @@ pub mod paintfuck {
           cmd_pos += 1;
           iterations_done += 1
         }
-        ('[', 1) => cmd_pos += 1,
-        (']', 0) => cmd_pos += 1,
-        ('[', 0) => cmd_pos = smallfuck::move_command_cursor(code, '[', cmd_pos as i32) as usize,
-        (']', 1) => cmd_pos = smallfuck::move_command_cursor(code, ']', cmd_pos as i32) as usize,
-        _ => {}
+        ('[', 1) => {
+          cmd_pos += 1;
+          iterations_done += 1
+        }
+        (']', 0) => {
+          cmd_pos += 1;
+          iterations_done += 1
+        }
+        ('[', 0) => {
+          cmd_pos = smallfuck::move_command_cursor(code, '[', cmd_pos as i32) as usize;
+          iterations_done += 1
+        }
+        (']', 1) => {
+          cmd_pos = smallfuck::move_command_cursor(code, ']', cmd_pos as i32) as usize;
+          iterations_done += 1
+        }
+        _ => iterations_done += 1,
       }
     }
     printer(tape)
