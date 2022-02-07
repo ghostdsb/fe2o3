@@ -93,3 +93,4 @@ One rust exercise daily.
 88. [Rocket Science](./src/day_88.rs) 
 89. [Interpreter SF-2](./src/day_89.rs) 
 90. [Interpreter PaintFuck](./src/day_90.rs) 
+91. [AOT episodes](./src/day_91.rs) 
