@@ -70,7 +70,8 @@ mod test {
   #[test]
   fn test_grades_for_empty_school() {
     let s = school::School::new();
-    assert_eq!(s.grades(), vec![]);
+    let v: Vec<u32> = vec![];
+    assert_eq!(s.grades(), v);
   }
   #[test]
   fn test_grades_for_one_student() {

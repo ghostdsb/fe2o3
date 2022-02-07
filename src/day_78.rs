@@ -30,9 +30,10 @@ mod tests {
 
   #[test]
   fn basic() {
+    let empty_vec: Vec<i32> = Vec::new();
     assert_eq!(sort_array(&[5, 3, 2, 8, 1, 4]), [1, 3, 2, 8, 5, 4]);
     assert_eq!(sort_array(&[5, 3, 1, 8, 0]), [1, 3, 5, 8, 0]);
-    assert_eq!(sort_array(&[]), []);
+    assert_eq!(sort_array(&[]), empty_vec);
   }
 
   #[test]
