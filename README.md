@@ -89,9 +89,18 @@ One rust exercise daily.
 84. [Chess board](https://github.com/ghostdsb/sokka) 
 85. [Chess board](https://github.com/ghostdsb/sokka) 
 <<<<<<< HEAD
+<<<<<<< HEAD
 86. [Interpreter MSF](./src/day_86.rs) 
 =======
 86. [Interpreter MSF](./src/day_86.rs) 
 87. [Interpreter SF](./src/day_87.rs) 
 88. [Rocket Science](./src/day_88.rs) 
 >>>>>>> a40521c (feat: day_88: rocket_science)
+=======
+86. [Interpreter MSF](./src/day_86.rs) 
+87. [Interpreter SF](./src/day_87.rs) 
+88. [Rocket Science](./src/day_88.rs) 
+89. [Interpreter SF-2](./src/day_89.rs) 
+90. [Interpreter PaintFuck](./src/day_90.rs) 
+91. [AOT episodes](./src/day_91.rs) 
+>>>>>>> 1bae902ff418c4bed543fcc27159741dc8d435ce

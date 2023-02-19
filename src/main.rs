@@ -63,248 +63,288 @@ mod day_81;
 mod day_82;
 mod day_83;
 mod day_86;
+mod day_87;
+mod day_88;
+mod day_89;
 mod day_9;
+mod day_90;
+mod day_91;
 
 fn main() {
-  println!("Daily Rust Exercise");
-  println!("=========");
-  println!("=========");
-  let input = day_4::is_valid("055 444 285");
-  println!("day4: {}", input);
+  //   println!("Daily Rust Exercise");
+  //   println!("=========");
+  //   println!("=========");
+  //   let input = day_4::is_valid("055 444 285");
+  //   println!("day4: {}", input);
+
+  //   println!("=========");
+  //   let input = day_5::check("055 444 285");
+  //   println!("day5: {}", input);
+
+  //   println!("=========");
+  //   let input = day_7::movie(18, 40, 0.47);
+  //   println!("day7: {}", input);
+
+  //   println!("=========");
+  //   let input = day_8::annotate(&["  *  ", "  *  ", "*****", "  *  ", "  *  "]);
+  //   println!("day8: {:?}", input);
+
+  //   println!("=========");
+  //   let m = day_9::mean("Rome", &da_ta());
+  //   let v = day_9::variance("Rome", &da_ta());
+  //   println!("day9: {}, {}", m, v);
+
+  //   println!("=========");
+  //   let x = day_10::frequency(&["aabbcccd", "eefg"], 4);
+  //   println!("day10: {:?}", x);
+
+  //   println!("=========");
+  //   let hm = hashmap!(1 => "a",);
+  //   println!("day11: {:?}", hm);
+
+  //   println!("=========");
+  //   let str = day_12::strong(145);
+  //   println!("day12: 145 is {}", str);
+
+  //   println!("=========");
+  //   let num = day_13::allyourbase::convert(&[1, 2, 0], 2, 10);
+  //   match num {
+  //     Ok(val) => println!("day13: bin 10: {:?}", val),
+  //     Err(error) => println!("day13: err {:?}", error),
+  //   }
+
+  //   println!("=========");
+  //   let allergy_score = 5;
+  //   let allergion = day_14::allergies::Allergies::new(allergy_score);
+  //   println!("day14: allergy score to {}", allergy_score);
+  //   for (i, item) in day_14::allergies::ALLERGENS.iter().enumerate() {
+  //     let al_score = 2i32.pow(i as u32);
+  //     match allergion.is_allergic_to(item) {
+  //       true => println!("allergic to {:?}({})", item, al_score),
+  //       false => println!("not allergic to {:?}({})", item, al_score),
+  //     }
+  //   }
+  //   println!("{:?}", allergion.allergies());
+
+  //   println!("=========");
+  //   let ans = day_15::jumping_number(12345);
+  //   println!("{}", ans);
+
+  //   println!("=========");
+  //   let input = [
+  //     day_16::Direction::North,
+  //     day_16::Direction::South,
+  //     day_16::Direction::South,
+  //     day_16::Direction::East,
+  //     day_16::Direction::West,
+  //     day_16::Direction::North,
+  //     day_16::Direction::West,
+  //   ];
+  //   let dir = day_16::dir_reduc(&input);
+  //   println!("day16: dirs {:?}", dir);
+
+  //   println!("=========");
+
+  //   let mut game = day_17::BowlingGame::new();
+
+  //   let _ = game.roll(10);
+  //   let _ = game.roll(10);
+  //   let _ = game.roll(10);
+  //   let _ = game.roll(5);
+  //   let _ = game.roll(3);
+
+  //   for _ in 0..12 {
+  //     let _ = game.roll(0);
+  //   }
+  //   println!("{:?}", game);
+  //   println!("{:?}", game.score());
+
+  //   println!("=========");
+  //   let hd1 = day_19::hamming::hamming_distance("ATGC", "ATGC");
+  //   let hd2 = day_19::hamming::hamming_distance("ATGC", "ATGG");
+  //   let hd3 = day_19::hamming::hamming_distance("ATGC", "ATGGG");
+
+  //   println!("day19: {:?}, {:?}, {:?}", hd1, hd2, hd3);
+  //   println!("=========");
+
+  //   let mut s = day_20::grade_school::School::new();
+  //   s.add(3, "Chelsea");
+  //   s.add(7, "Logan");
+  //   println!("day20: {:?}", s.grades());
+  //   println!("day20: {:?}, {:?}", s.grade(3), s.grade(7));
+
+  //   println!("=========");
+  //   // let isbn = "3-598-21508-8";
+  //   // let isbn = "3-598-21507-X";
+  //   let isbn = "3-598-2X507-9";
+  //   let is_isbn = day_21::is_valid_isbn(isbn);
+  //   println!("day21: {:?}, {:?}", isbn, is_isbn);
+
+  //   println!("=========");
+  //   let val = "ABBBCCCC  AA";
+  //   let rle_val = day_26::rle::encode(val);
+  //   println!("day26: {:?}, {:?}", val, rle_val);
+
+  //   println!("=========");
+  //   let val = "D2A8B";
+  //   let rle_val = day_26::rle::decode(val);
+  //   println!("day26: {:?}, {:?}", val, rle_val);
+
+  //   println!("=========");
+  //   let primes: Vec<u64> = vec![
+  //     5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 773, 967, 3461, 6131,
+  //   ];
+  //   let private_keys: Vec<u64> = primes
+  //     .iter()
+  //     .map(|x| day_27::diffie_hellman::private_key(*x))
+  //     .collect();
+
+  //   for i in 0..primes.len() {
+  //     println!("day27: pk: {}, p: {}", private_keys[i], primes[i]);
+  //   }
+
+  //   println!("=========");
+  //   println!("day_28: {:?}", day_28::sieve::primes_up_to(0));
+  //   println!("day_28: {:?}", day_28::sieve::primes_up_to(2));
+  //   println!("day_28: {:?}", day_28::sieve::primes_up_to(3));
+  //   println!("day_28: {:?}", day_28::sieve::primes_up_to(5));
+  //   println!("day_28: {:?}", day_28::sieve::primes_up_to(11));
+  //   println!("day_28: {:?}", day_28::sieve::primes_up_to(13));
+
+  //   println!("=========");
+  //   let place = "Varanasi";
+  //   day_31::hello(place);
+
+  //   println!("=========");
+  //   let input = "Allegoric Alaskans;Blithering Badgers;win\n".to_string()
+  //     + "Devastating Donkeys;Courageous Californians;draw\n"
+  //     + "Devastating Donkeys;Allegoric Alaskans;win\n"
+  //     + "Courageous Californians;Blithering Badgers;loss\n"
+  //     + "Blithering Badgers;Devastating Donkeys;loss\n"
+  //     + "Allegoric Alaskans;Courageous Californians;win";
+  //   let table = day_34::tournament::tally(&input);
+
+  //   println!("day_34: \n{}", table);
+
+  //   println!("=========");
+  //   let x: Vec<i32> = day_37::accumulate::map(vec![1, 2, 3], |c: i32| c * c);
+
+  //   println!("day_37: {:?}", x);
+
+  //   println!("=========");
+  //   let x = day_39::num_primorial(6_usize);
+  //   println!("{:?}", x);
+
+  //   println!("=========");
+  //   let _x = day_40::tank_vol(0, 0, 0);
+
+  //   println!("=========");
+  //   let x = day_45::persistence(4);
+  //   println!("x: {}", x);
+  //   let x = day_45::persistence(39);
+  //   println!("x: {}", x);
+
+  //   println!("=========");
+  //   let b1 = r#"
+  // 1000.00
+  // 125 Market 125.45
+  // 126 Hardware 34.95
+  // 127 Video 7.45
+  // 128 Book 14.32
+  // 129 Gasoline 16.10
+  // "#;
+  //   let x = day_49::ledger::balance(b1);
+  //   println!("x: \n{}", x);
+
+  //   println!("=========");
+  //   let x = day_51::simpson(290);
+  //   println!("day_51: {}", x);
+
+  //   println!("=========");
+  //   let x = day_53::list_squared(1, 250);
+  //   println!("day_53: {:?}", x);
+
+  //   println!("=========");
+  //   let x = day_54::buddy(10, 50);
+  //   println!("day_53: {:?}", x);
+
+  //   println!("=========");
+  //   const FIGHTERS: [[&str; 6]; 2] = [
+  //     ["Ryu", "E.Honda", "Blanka", "Guile", "Balrog", "Vega"],
+  //     ["Ken", "Chun Li", "Zangief", "Dhalsim", "Sagat", "M.Bison"],
+  //   ];
+
+  //   use day_70::Direction::*;
+  //   let moves = [Left, Left, Left, Left, Left, Left, Left, Left];
+  //   let x = day_70::street_fighter_selection(&FIGHTERS, &[0, 0], &moves);
+  //   println!("day_53: {:?}", x);
+
+  //   println!("=========");
+  //   let x = day_71::prime_factors(7775460);
+  //   println!("day_71: {:?}", x);
+
+  //   println!("=========");
+  //   let x = day_74::two_set::solve(7);
+  //   println!("day_74: {:?}", x);
+
+  //   println!("=========");
+  //   let x = day_75::factorial_trailing_zero::solve(20);
+  //   println!("day_75: {:?}", x);
+
+  //   println!("=========");
+  //   let x = day_76::convert("ABC");
+  //   println!("day_76: {:?}", x);
+
+  //   println!("=========");
+  //   let x = day_79::uncollapse("onetwo");
+  //   println!("day_79: {:?}", x);
+
+  //   println!("=========");
+  //   let x = day_80::weigh_the_list(vec![1, 2, 3, 4, 5, 6]);
+  //   println!("day_80: {:?}", x);
+
+  //   println!("=========");
+  //   let x = day_81::convert_fracts(vec![(690, 1300), (870, 13100), (30, 40)]);
+  //   println!("day_81: {:?}", x);
+
+  //   println!("=========");
+  //   let x = day_86::msf("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++.+++++++++++++++++++++++++++++.+++++++..+++.+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++.++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++.+++++++++++++++++++++++++++++++++++++++++++++++++++++++.++++++++++++++++++++++++.+++.++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++.++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++.+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++.");
+  //   println!("day_86: {:?}", x);
+
+  //   println!("=========");
+  //   // let tape = "111";
+  //   let x = day_89::smallfuck::interpreter("*", "00101100");
+  //   println!("day_89: {:?}", x);
+  //   let x = day_89::smallfuck::interpreter(">*>*", "00101100");
+  //   println!("day_89: {:?}", x);
+  //   let x = day_89::smallfuck::interpreter("*>*>*>*>*>*>*>*", "00101100");
+  //   println!("day_89: {:?}", x);
+  //   let x = day_89::smallfuck::interpreter("*>*>>*>>>*>*", "00101100");
+  //   println!("day_89: {:?}", x);
+  //   let x = day_89::smallfuck::interpreter("<>*", "00");
+  //   println!("day_89: {:?}", x);
+  //   let x = day_89::smallfuck::interpreter("[*>[>*>]>]", "11001");
+  //   println!("day_89: {:?}", x);
+  //   let x = day_89::smallfuck::interpreter("[>[*>*>*>]>]", "10110");
+  //   println!("day_89: {:?}", x);
+  //   let x = day_89::smallfuck::interpreter("*[>*]", &"0".repeat(256));
+  //   println!("day_89: {:?}", x);
+
+  //   // let c = "[*[>*]]";
+  //   // let p = day_89::move_command_cursor(c, ']', 6_i32);
+  //   // println!("day_89::p {:?}", p);
+
+  //   println!("=========");
+  //   let x = day_88::rocket_fuel(11186.0);
+  //   println!("day_88: {:?}", x);
+
+  //   println!("=========");
+  //   let x = day_90::paintfuck::interpreter("*e*e*e*es*es*ws*ws*w*w*w*n*n*n*ssss*s*s*s*", 100, 6, 9);
+  //   println!("day_90: {:?}", x);
 
   println!("=========");
-  let input = day_5::check("055 444 285");
-  println!("day5: {}", input);
-
-  println!("=========");
-  let input = day_7::movie(18, 40, 0.47);
-  println!("day7: {}", input);
-
-  println!("=========");
-  let input = day_8::annotate(&["  *  ", "  *  ", "*****", "  *  ", "  *  "]);
-  println!("day8: {:?}", input);
-
-  println!("=========");
-  let m = day_9::mean("Rome", &da_ta());
-  let v = day_9::variance("Rome", &da_ta());
-  println!("day9: {}, {}", m, v);
-
-  println!("=========");
-  let x = day_10::frequency(&["aabbcccd", "eefg"], 4);
-  println!("day10: {:?}", x);
-
-  println!("=========");
-  let hm = hashmap!(1 => "a",);
-  println!("day11: {:?}", hm);
-
-  println!("=========");
-  let str = day_12::strong(145);
-  println!("day12: 145 is {}", str);
-
-  println!("=========");
-  let num = day_13::allyourbase::convert(&[1, 2, 0], 2, 10);
-  match num {
-    Ok(val) => println!("day13: bin 10: {:?}", val),
-    Err(error) => println!("day13: err {:?}", error),
-  }
-
-  println!("=========");
-  let allergy_score = 5;
-  let allergion = day_14::allergies::Allergies::new(allergy_score);
-  println!("day14: allergy score to {}", allergy_score);
-  for (i, item) in day_14::allergies::ALLERGENS.iter().enumerate() {
-    let al_score = 2i32.pow(i as u32);
-    match allergion.is_allergic_to(item) {
-      true => println!("allergic to {:?}({})", item, al_score),
-      false => println!("not allergic to {:?}({})", item, al_score),
-    }
-  }
-  println!("{:?}", allergion.allergies());
-
-  println!("=========");
-  let ans = day_15::jumping_number(12345);
-  println!("{}", ans);
-
-  println!("=========");
-  let input = [
-    day_16::Direction::North,
-    day_16::Direction::South,
-    day_16::Direction::South,
-    day_16::Direction::East,
-    day_16::Direction::West,
-    day_16::Direction::North,
-    day_16::Direction::West,
-  ];
-  let dir = day_16::dir_reduc(&input);
-  println!("day16: dirs {:?}", dir);
-
-  println!("=========");
-
-  let mut game = day_17::BowlingGame::new();
-
-  let _ = game.roll(10);
-  let _ = game.roll(10);
-  let _ = game.roll(10);
-  let _ = game.roll(5);
-  let _ = game.roll(3);
-
-  for _ in 0..12 {
-    let _ = game.roll(0);
-  }
-  println!("{:?}", game);
-  println!("{:?}", game.score());
-
-  println!("=========");
-  let hd1 = day_19::hamming::hamming_distance("ATGC", "ATGC");
-  let hd2 = day_19::hamming::hamming_distance("ATGC", "ATGG");
-  let hd3 = day_19::hamming::hamming_distance("ATGC", "ATGGG");
-
-  println!("day19: {:?}, {:?}, {:?}", hd1, hd2, hd3);
-  println!("=========");
-
-  let mut s = day_20::grade_school::School::new();
-  s.add(3, "Chelsea");
-  s.add(7, "Logan");
-  println!("day20: {:?}", s.grades());
-  println!("day20: {:?}, {:?}", s.grade(3), s.grade(7));
-
-  println!("=========");
-  // let isbn = "3-598-21508-8";
-  // let isbn = "3-598-21507-X";
-  let isbn = "3-598-2X507-9";
-  let is_isbn = day_21::is_valid_isbn(isbn);
-  println!("day21: {:?}, {:?}", isbn, is_isbn);
-
-  println!("=========");
-  let val = "ABBBCCCC  AA";
-  let rle_val = day_26::rle::encode(val);
-  println!("day26: {:?}, {:?}", val, rle_val);
-
-  println!("=========");
-  let val = "D2A8B";
-  let rle_val = day_26::rle::decode(val);
-  println!("day26: {:?}, {:?}", val, rle_val);
-
-  println!("=========");
-  let primes: Vec<u64> = vec![
-    5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 773, 967, 3461, 6131,
-  ];
-  let private_keys: Vec<u64> = primes
-    .iter()
-    .map(|x| day_27::diffie_hellman::private_key(*x))
-    .collect();
-
-  for i in 0..primes.len() {
-    println!("day27: pk: {}, p: {}", private_keys[i], primes[i]);
-  }
-
-  println!("=========");
-  println!("day_28: {:?}", day_28::sieve::primes_up_to(0));
-  println!("day_28: {:?}", day_28::sieve::primes_up_to(2));
-  println!("day_28: {:?}", day_28::sieve::primes_up_to(3));
-  println!("day_28: {:?}", day_28::sieve::primes_up_to(5));
-  println!("day_28: {:?}", day_28::sieve::primes_up_to(11));
-  println!("day_28: {:?}", day_28::sieve::primes_up_to(13));
-
-  println!("=========");
-  let place = "Varanasi";
-  day_31::hello(place);
-
-  println!("=========");
-  let input = "Allegoric Alaskans;Blithering Badgers;win\n".to_string()
-    + "Devastating Donkeys;Courageous Californians;draw\n"
-    + "Devastating Donkeys;Allegoric Alaskans;win\n"
-    + "Courageous Californians;Blithering Badgers;loss\n"
-    + "Blithering Badgers;Devastating Donkeys;loss\n"
-    + "Allegoric Alaskans;Courageous Californians;win";
-  let table = day_34::tournament::tally(&input);
-
-  println!("day_34: \n{}", table);
-
-  println!("=========");
-  let x: Vec<i32> = day_37::accumulate::map(vec![1, 2, 3], |c: i32| c * c);
-
-  println!("day_37: {:?}", x);
-
-  println!("=========");
-  let x = day_39::num_primorial(6_usize);
-  println!("{:?}", x);
-
-  println!("=========");
-  let _x = day_40::tank_vol(0, 0, 0);
-
-  println!("=========");
-  let x = day_45::persistence(4);
-  println!("x: {}", x);
-  let x = day_45::persistence(39);
-  println!("x: {}", x);
-
-  println!("=========");
-  let b1 = r#"
-1000.00
-125 Market 125.45
-126 Hardware 34.95
-127 Video 7.45
-128 Book 14.32
-129 Gasoline 16.10
-"#;
-  let x = day_49::ledger::balance(b1);
-  println!("x: \n{}", x);
-
-  println!("=========");
-  let x = day_51::simpson(290);
-  println!("day_51: {}", x);
-
-  println!("=========");
-  let x = day_53::list_squared(1, 250);
-  println!("day_53: {:?}", x);
-
-  println!("=========");
-  let x = day_54::buddy(10, 50);
-  println!("day_53: {:?}", x);
-
-  println!("=========");
-  const FIGHTERS: [[&str; 6]; 2] = [
-    ["Ryu", "E.Honda", "Blanka", "Guile", "Balrog", "Vega"],
-    ["Ken", "Chun Li", "Zangief", "Dhalsim", "Sagat", "M.Bison"],
-  ];
-
-  use day_70::Direction::*;
-  let moves = [Left, Left, Left, Left, Left, Left, Left, Left];
-  let x = day_70::street_fighter_selection(&FIGHTERS, &[0, 0], &moves);
-  println!("day_53: {:?}", x);
-
-  println!("=========");
-  let x = day_71::prime_factors(7775460);
-  println!("day_71: {:?}", x);
-
-  println!("=========");
-  let x = day_74::two_set::solve(7);
-  println!("day_74: {:?}", x);
-
-  println!("=========");
-  let x = day_75::factorial_trailing_zero::solve(20);
-  println!("day_75: {:?}", x);
-
-  println!("=========");
-  let x = day_76::convert("ABC");
-  println!("day_76: {:?}", x);
-
-  println!("=========");
-  let x = day_79::uncollapse("onetwo");
-  println!("day_79: {:?}", x);
-
-  println!("=========");
-  let x = day_80::weigh_the_list(vec![1, 2, 3, 4, 5, 6]);
-  println!("day_80: {:?}", x);
-
-  println!("=========");
-  let x = day_81::convert_fracts(vec![(690, 1300), (870, 13100), (30, 40)]);
-  println!("day_81: {:?}", x);
-
-  println!("=========");
-  let x = day_86::msf("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++.+++++++++++++++++++++++++++++.+++++++..+++.+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++.++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++.+++++++++++++++++++++++++++++++++++++++++++++++++++++++.++++++++++++++++++++++++.+++.++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++.++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++.+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++.");
-  println!("day_81: {:?}", x);
+  let x = day_91::attack_on_titan::search();
+  println!("day_90: {:?}", x);
 }
 
 fn da_ta() -> String {

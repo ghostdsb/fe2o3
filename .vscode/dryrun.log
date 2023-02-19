@@ -1,0 +1,10 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/ghostdsb/Documents/fe2o3'
+cargo-clippy
+cargo test
+cargo fmt
+git add .
+git cz
+git push
+make: Leaving directory '/home/ghostdsb/Documents/fe2o3'
+ 
