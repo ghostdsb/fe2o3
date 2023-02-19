@@ -88,4 +88,10 @@ One rust exercise daily.
 83. [Curve length](./src/day_83.rs ) 
 84. [Chess board](https://github.com/ghostdsb/sokka) 
 85. [Chess board](https://github.com/ghostdsb/sokka) 
+<<<<<<< HEAD
 86. [Interpreter MSF](./src/day_86.rs) 
+=======
+86. [Interpreter MSF](./src/day_86.rs) 
+87. [Interpreter SF](./src/day_87.rs) 
+88. [Rocket Science](./src/day_88.rs) 
+>>>>>>> a40521c (feat: day_88: rocket_science)
